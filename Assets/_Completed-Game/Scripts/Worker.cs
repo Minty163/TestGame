@@ -6,6 +6,7 @@ public class Worker : MonoBehaviour {
 
     public float speed;
     bool atCapacity;
+    GameObject cargo;
 
     // Use this for initialization
     void Start () {
@@ -27,7 +28,10 @@ public class Worker : MonoBehaviour {
         }
         else
         {
-            Vector3 movement = new Vector3(1, 0.0f, 0.0f);
+            Transform Target = GameObject.Find("CollectionZone").transform;
+            Vector3 movement = (Target.position - transform.position);
+            movement = new Vector3(movement.x, 0.0f, movement.z);
+            movement.Normalize();
             GetComponent<Rigidbody>().AddForce(movement * speed);
         }
 
@@ -36,7 +40,7 @@ public class Worker : MonoBehaviour {
     //function to find the closest pick up target
     GameObject GetClosestPickUp (GameObject[] PickUps)
     {
-        GameObject bestTarget = null;
+        GameObject bestTarget = GameObject.Find("CollectionZone");
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
         foreach (GameObject potentialTargetObj in PickUps)
@@ -68,8 +72,15 @@ public class Worker : MonoBehaviour {
             // move the pick up to the worker
             //Destroy(other.gameObject);
             other.gameObject.GetComponent<PickUp>().PickedUp(this.gameObject);
-
+            cargo = other.gameObject;
             atCapacity = true;
+        }
+
+        // if tag 'CollectionZone'
+        if (other.gameObject.CompareTag("CollectionZone") && atCapacity)
+        {
+            Destroy(cargo);
+            atCapacity = false;
         }
     }
 
