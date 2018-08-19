@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{15592BB8-9428-74AD-CEE0-2573C6E129FD}</ProjectGuid>
+    <ProjectGuid>{1EDA4AD3-F73B-C2DD-EFD7-42E009ADB569}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,23 +62,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Completed-Game\Scripts\CameraController.cs" />
-    <Compile Include="Assets\_Completed-Game\Scripts\GameScope.cs" />
+    <Compile Include="Assets\_Completed-Game\Scripts\GameResources.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\PickUp.cs" />
+    <Compile Include="Assets\_Completed-Game\Scripts\PickUpHandler.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\PickUpZone.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\PlayerController.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\Spawner.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\Worker.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Public/Documents/Unity Projects/Test Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Public/Documents/Unity Projects/Test Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Public/Documents/Unity Projects/Test Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Public/Documents/Unity Projects/Test Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

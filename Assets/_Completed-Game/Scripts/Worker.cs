@@ -7,7 +7,8 @@ public class Worker : MonoBehaviour {
     public float speed;
     bool atCapacity;
     Transform cargo;
-    GameScope gameScope;
+    PickUpHandler pickUpHandler;
+    GameResources gameResources;
     Transform home;
     const string COLLECTION_ZONE = "CollectionZone";
     public Transform aimTarget;
@@ -17,7 +18,8 @@ public class Worker : MonoBehaviour {
         atCapacity = false;
         home = GameObject.Find(COLLECTION_ZONE).transform;
         aimTarget = home;
-        gameScope = GameObject.Find("GameScope").GetComponent<GameScope>();
+        pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
+        gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
     }
 	
 	// Update is called once per frame
@@ -28,9 +30,9 @@ public class Worker : MonoBehaviour {
             {
                 //Debug.Log("CollectionZoneTarget");
                 //find direction to closest pick up
-                List<Transform> AllPickUps = gameScope.availPickUps;
+                List<Transform> AllPickUps = pickUpHandler.availPickUps;
                 Transform Target = GetClosestPickUp(AllPickUps).transform;
-                gameScope.RemoveFromAvailPickUps(Target);
+                pickUpHandler.RemoveFromAvailPickUps(Target);
                 aimTarget = Target;
             }
             //Debug.Log("Push Target");
@@ -50,7 +52,7 @@ public class Worker : MonoBehaviour {
         }
 
         //Normalize Rotate
-        GetComponent<Rigidbody>().AddRelativeTorque(-1 * this.transform.rotation.x, 0, -1 * this.transform.rotation.z);
+        GetComponent<Rigidbody>().AddRelativeTorque(-1 * this.transform.rotation.x, -1 * this.transform.rotation.y, -1 * this.transform.rotation.z);
         //GetComponent<Rigidbody>().AddForce(0.0f, speed * Mathf.Max(Mathf.Min(0.5f - this.transform.position.y, 10), -10), 0.0f);
         GetComponent<Rigidbody>().AddForce(0.0f, speed * (0.5f - this.transform.position.y), 0.0f);
         //GetComponent<Rigidbody>().AddForce()
@@ -104,12 +106,12 @@ public class Worker : MonoBehaviour {
         }
         */
 
-        if (other.transform.CompareTag("Pick Up") && !atCapacity && (other.transform.Equals(aimTarget) || gameScope.IsAvailablePickUp(other.transform)))
+        if (other.transform.CompareTag("Pick Up") && !atCapacity && (other.transform.Equals(aimTarget) || pickUpHandler.IsAvailablePickUp(other.transform)))
         {
             if (!other.transform.Equals(aimTarget))
             {
-                gameScope.RemoveFromAvailPickUps(other.transform);
-                gameScope.AddToAvailPickUps(aimTarget);
+                pickUpHandler.RemoveFromAvailPickUps(other.transform);
+                pickUpHandler.AddToAvailPickUps(aimTarget);
             }
             PickUpCargo(other);
         }
@@ -151,6 +153,7 @@ public class Worker : MonoBehaviour {
         //gameScope.RemoveFromAvailPickUps(cargo.transform); //Hopefully not needed
         Destroy(cargo.gameObject);
         atCapacity = false;
+        gameResources.AddResource(1);
         // TODO Add to global resource count
 
     }

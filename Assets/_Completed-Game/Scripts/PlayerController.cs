@@ -9,14 +9,13 @@ public class PlayerController : MonoBehaviour {
 	
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
-	public Text countText;
-	public Text winText;
-    GameScope gameScope;
-    const string COLLECTION_ZONE = "CollectionZone";
+    public int workerCost;
+    PickUpHandler pickUpHandler;
+    GameResources gameResources;
+    //const string COLLECTION_ZONE = "CollectionZone";
 
-    // Create private references to the rigidbody component on the player, and the count of pick up objects picked up so far
+    // Create private references to the rigidbody component on the player
     private Rigidbody rb;
-	private int count;
 
 	// At the start of the game..
 	void Start ()
@@ -24,16 +23,8 @@ public class PlayerController : MonoBehaviour {
 		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
 
-		// Set the count to zero 
-		count = 0;
-
-		// Run the SetCountText function to update the UI (see below)
-		SetCountText ();
-
-		// Set the text property of our Win Text UI to an empty string, making the 'You Win' (game over message) blank
-		winText.text = "";
-
-        gameScope = GameObject.Find("GameScope").GetComponent<GameScope>();
+        pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
+        gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
     }
 
 	// Each physics step..
@@ -56,40 +47,24 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) 
 	{
 		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
-		if (other.gameObject.CompareTag ("Pick Up"))
+		if (other.gameObject.CompareTag ("Pick Up") && pickUpHandler.IsAvailablePickUp(other.transform))
 		{
+            gameResources.AddResource(1);
+            
             // Make the other game object (the pick up) inactive, to make it disappear
             //other.gameObject.SetActive (false);
-            gameScope.RemoveFromAvailPickUps(other.gameObject.transform);
+            pickUpHandler.RemoveFromAvailPickUps(other.gameObject.transform);
             Destroy(other.gameObject);
-
-            // Add one to the score variable 'count'
-            count = count + 1;
-
-			// Run the 'SetCountText()' function (see below)
-			SetCountText ();
 		}
 
         // ..and if tag is 'Spawner'
-        if (other.gameObject.CompareTag("Spawner") && count > 2)
+        else if (other.gameObject.CompareTag("Spawner") && gameResources.GetResourceCount() >= workerCost)
         {
             // Spawn Worker
             //other.gameObject.GetComponent<Spawner>().Spawn();
             other.gameObject.GetComponent<Spawner>().Spawn();
+            gameResources.AddResource(-workerCost);
         }
     }
 
-	// Create a standalone function that can update the 'countText' UI and check if the required amount to win has been achieved
-	void SetCountText()
-	{
-		// Update the text field of our 'countText' variable
-		countText.text = "Count: " + count.ToString ();
-
-		// Check if our 'count' is equal to or exceeded 12
-		if (count >= 12) 
-		{
-			// Set the text value of our 'winText'
-			winText.text = "You Win!";
-		}
-	}
 }
