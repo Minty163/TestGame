@@ -9,15 +9,17 @@ public class Worker : MonoBehaviour {
     Transform cargo;
     PickUpHandler pickUpHandler;
     GameResources gameResources;
-    Transform home;
-    const string COLLECTION_ZONE = "CollectionZone";
+    Transform HomeZone;
+    //const string COLLECTION_ZONE = "CollectionZone";
     public Transform aimTarget;
+    GameResources.Allegiance allegiance;
+
 
     // Use this for initialization
     void Start () {
         atCapacity = false;
-        home = GameObject.Find(COLLECTION_ZONE).transform;
-        aimTarget = home;
+        //HomeZone = GameObject.Find(COLLECTION_ZONE).transform;
+        aimTarget = HomeZone;
         pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
         gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
     }
@@ -26,7 +28,7 @@ public class Worker : MonoBehaviour {
 	void FixedUpdate () {
         if (!atCapacity)
         {
-            if (aimTarget.Equals(home))
+            if (aimTarget.Equals(HomeZone))
             {
                 //Debug.Log("CollectionZoneTarget");
                 //find direction to closest pick up
@@ -44,7 +46,7 @@ public class Worker : MonoBehaviour {
         }
         else
         {
-            Transform Target = home;
+            Transform Target = HomeZone;
             Vector3 movement = (Target.position - transform.position);
             movement = new Vector3(movement.x, 0.0f, movement.z);
             movement.Normalize();
@@ -62,7 +64,7 @@ public class Worker : MonoBehaviour {
     //function to find the closest pick up target
     Transform GetClosestPickUp (List<Transform> PickUps)
     {
-        Transform bestTarget = home;
+        Transform bestTarget = HomeZone;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
         foreach (Transform potentialTargetObj in PickUps)
@@ -88,24 +90,6 @@ public class Worker : MonoBehaviour {
     //Collision effects
     void OnTriggerEnter(Collider other)
     {
-        // ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
-        /*
-        if (other.gameObject.CompareTag("Pick Up") && other.gameObject.Equals(aimTarget) && !atCapacity)
-        {
-            PickUpCargo(other);
-        }
-        else if(other.gameObject.CompareTag("Pick Up") && !other.gameObject.Equals(aimTarget) && gameScope.IsAvailablePickUp(other.transform) && !atCapacity)
-        {
-            gameScope.RemoveFromAvailPickUps(other.transform);
-            gameScope.AddToAvailPickUps(aimTarget);
-            PickUpCargo(other);
-        }
-        else if (other.gameObject.CompareTag(COLLECTION_ZONE) && atCapacity)
-        {
-            DeliverCargo();
-        }
-        */
-
         if (other.transform.CompareTag("Pick Up") && !atCapacity && (other.transform.Equals(aimTarget) || pickUpHandler.IsAvailablePickUp(other.transform)))
         {
             if (!other.transform.Equals(aimTarget))
@@ -115,7 +99,7 @@ public class Worker : MonoBehaviour {
             }
             PickUpCargo(other);
         }
-        else if (other.transform.CompareTag(COLLECTION_ZONE) && atCapacity)
+        else if (other.transform.Equals(HomeZone) && atCapacity)
         {
             DeliverCargo();
         }
@@ -153,17 +137,27 @@ public class Worker : MonoBehaviour {
         //gameScope.RemoveFromAvailPickUps(cargo.transform); //Hopefully not needed
         Destroy(cargo.gameObject);
         atCapacity = false;
-        gameResources.AddResource(1);
+        gameResources.AddResource(1, allegiance);
         // TODO Add to global resource count
 
     }
 
     private void PickUpCargo(Collider other)
     {
-        aimTarget = home;
+        aimTarget = HomeZone;
         other.gameObject.GetComponent<PickUp>().PickedUp(this.transform);
         cargo = other.transform;
         atCapacity = true;
+    }
+
+    public void SetHomeZone(Transform zone)
+    {
+        HomeZone = zone;
+    }
+
+    public void SetAllegiance(GameResources.Allegiance newAllegiance)
+    {
+        allegiance = newAllegiance;
     }
 
     /*

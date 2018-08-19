@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
     PickUpHandler pickUpHandler;
     GameResources gameResources;
+    GameResources.Allegiance allegiance;
     //const string COLLECTION_ZONE = "CollectionZone";
 
     // Create private references to the rigidbody component on the player
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
         pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
         gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
+        allegiance = GameResources.Allegiance.Ally;
     }
 
 	// Each physics step..
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
 		if (other.gameObject.CompareTag ("Pick Up") && pickUpHandler.IsAvailablePickUp(other.transform))
 		{
-            gameResources.AddResource(1);
+            gameResources.AddResource(1, allegiance);
             
             // Make the other game object (the pick up) inactive, to make it disappear
             //other.gameObject.SetActive (false);

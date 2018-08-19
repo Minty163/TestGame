@@ -8,6 +8,7 @@ public class GameResources : MonoBehaviour {
     public Text countText;
     public Text winText;
     private int resourceCount;
+    public enum Allegiance { Ally, Enemy };
 
     // Use this for initialization
     void Start () {
@@ -40,7 +41,7 @@ public class GameResources : MonoBehaviour {
         }
     }
 
-    public void AddResource(int resources)
+    public void AddResource(int resources, Allegiance targetAllegiance)
     {
         resourceCount = resourceCount + resources;
         SetResourceText();
