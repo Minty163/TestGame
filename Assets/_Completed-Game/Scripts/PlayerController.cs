@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public Text countText;
 	public Text winText;
+    GameScope gameScope;
+    const string COLLECTION_ZONE = "CollectionZone";
 
-	// Create private references to the rigidbody component on the player, and the count of pick up objects picked up so far
-	private Rigidbody rb;
+    // Create private references to the rigidbody component on the player, and the count of pick up objects picked up so far
+    private Rigidbody rb;
 	private int count;
 
 	// At the start of the game..
@@ -30,7 +32,9 @@ public class PlayerController : MonoBehaviour {
 
 		// Set the text property of our Win Text UI to an empty string, making the 'You Win' (game over message) blank
 		winText.text = "";
-	}
+
+        gameScope = GameObject.Find("GameScope").GetComponent<GameScope>();
+    }
 
 	// Each physics step..
 	void FixedUpdate ()
@@ -56,6 +60,7 @@ public class PlayerController : MonoBehaviour {
 		{
             // Make the other game object (the pick up) inactive, to make it disappear
             //other.gameObject.SetActive (false);
+            gameScope.RemoveFromAvailPickUps(other.gameObject.transform);
             Destroy(other.gameObject);
 
             // Add one to the score variable 'count'

@@ -4,7 +4,7 @@ using System.Collections;
 public class PickUp : MonoBehaviour {
 
     bool collected;
-    GameObject transport;
+    Transform transport;
     public float Speed;
     //public float Speed { get; set; }
 
@@ -31,7 +31,7 @@ public class PickUp : MonoBehaviour {
         }
 	}
 
-    public void PickedUp (GameObject collector)
+    public void PickedUp (Transform collector)
     {
         //
         collected = true;

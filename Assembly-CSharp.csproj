@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Completed-Game\Scripts\CameraController.cs" />
+    <Compile Include="Assets\_Completed-Game\Scripts\GameScope.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\PickUp.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\PickUpZone.cs" />
     <Compile Include="Assets\_Completed-Game\Scripts\PlayerController.cs" />
