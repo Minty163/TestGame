@@ -21,7 +21,7 @@ public class Worker : MonoBehaviour {
         //HomeZone = GameObject.Find(COLLECTION_ZONE).transform;
         aimTarget = HomeZone;
         pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
-        gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
+        //gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
     }
 	
 	// Update is called once per frame
@@ -137,7 +137,7 @@ public class Worker : MonoBehaviour {
         //gameScope.RemoveFromAvailPickUps(cargo.transform); //Hopefully not needed
         Destroy(cargo.gameObject);
         atCapacity = false;
-        gameResources.AddResource(1, allegiance);
+        gameResources.AddResource(1);
         // TODO Add to global resource count
 
     }
@@ -158,6 +158,11 @@ public class Worker : MonoBehaviour {
     public void SetAllegiance(GameResources.Allegiance newAllegiance)
     {
         allegiance = newAllegiance;
+    }
+
+    public void SetGameResources(GameResources newGameResources)
+    {
+        gameResources = newGameResources;
     }
 
     /*

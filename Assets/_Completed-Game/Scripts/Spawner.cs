@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 
     public Transform Worker;
     public Transform CollectionZone;
-    GameResources gameResources;
+    public GameResources gameResources;
     public int workerCost;
     private Vector3 spawnDirection;
     public GameResources.Allegiance allegiance;
@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         //Instantiate(Worker, new Vector3(1, 1, 0), Quaternion.identity);
-        gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
+        //gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
         spawnDirection = new Vector3(0, 0, 1);
     }
 
@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour
         Worker workerObject = createdWorker.GetComponent<Worker>();
         workerObject.SetHomeZone(CollectionZone);
         workerObject.SetAllegiance(allegiance);
+        workerObject.SetGameResources(gameResources);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -37,7 +38,7 @@ public class Spawner : MonoBehaviour
             // Spawn Worker
             //other.gameObject.GetComponent<Spawner>().Spawn();
             Spawn();
-            gameResources.AddResource(-workerCost, allegiance);
+            gameResources.AddResource(-workerCost);
         }
     }
 }

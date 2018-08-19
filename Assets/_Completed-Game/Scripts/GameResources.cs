@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class GameResources : MonoBehaviour {
 
     public Text countText;
-    public Text winText;
+    public string Display;
+    //public Text winText;
     private int resourceCount;
     public enum Allegiance { Ally, Enemy };
 
@@ -19,7 +20,7 @@ public class GameResources : MonoBehaviour {
         SetResourceText();
 
         // Set the text property of our Win Text UI to an empty string, making the 'You Win' (game over message) blank
-        winText.text = "";
+        //winText.text = "";
     }
 	
 	// Update is called once per frame
@@ -31,17 +32,17 @@ public class GameResources : MonoBehaviour {
     void SetResourceText()
     {
         // Update the text field of our 'countText' variable
-        countText.text = "Resources: " + resourceCount.ToString();
+        countText.text = Display + resourceCount.ToString();
 
         // Check if our 'resources' is equal to or exceeded 100
-        if (resourceCount >= 100)
-        {
+        //if (resourceCount >= 100)
+        //{
             // Set the text value of our 'winText'
-            winText.text = "You Win!";
-        }
+            //winText.text = "You Win!";
+        //}
     }
 
-    public void AddResource(int resources, Allegiance targetAllegiance)
+    public void AddResource(int resources)
     {
         resourceCount = resourceCount + resources;
         SetResourceText();

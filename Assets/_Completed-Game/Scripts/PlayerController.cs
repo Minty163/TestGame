@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 
         pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
-        gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
+        //gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
         allegiance = GameResources.Allegiance.Ally;
     }
 
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
 		if (other.gameObject.CompareTag ("Pick Up") && pickUpHandler.IsAvailablePickUp(other.transform))
 		{
-            gameResources.AddResource(1, allegiance);
+            gameResources.AddResource(1);
             
             // Make the other game object (the pick up) inactive, to make it disappear
             //other.gameObject.SetActive (false);
