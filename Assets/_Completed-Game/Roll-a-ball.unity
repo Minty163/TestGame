@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7703437}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,7 +359,13 @@ Prefab:
       propertyPath: m_Name
       value: Spawner1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 65834620046681482, guid: 20281b2b83bd6d34ebbd09b0446a39ed,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 65751404348402220, guid: 20281b2b83bd6d34ebbd09b0446a39ed, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 20281b2b83bd6d34ebbd09b0446a39ed, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &296970716

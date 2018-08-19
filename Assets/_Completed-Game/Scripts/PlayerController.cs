@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
 	
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
-    public int workerCost;
     PickUpHandler pickUpHandler;
     GameResources gameResources;
     //const string COLLECTION_ZONE = "CollectionZone";
@@ -56,15 +55,6 @@ public class PlayerController : MonoBehaviour {
             pickUpHandler.RemoveFromAvailPickUps(other.gameObject.transform);
             Destroy(other.gameObject);
 		}
-
-        // ..and if tag is 'Spawner'
-        else if (other.gameObject.CompareTag("Spawner") && gameResources.GetResourceCount() >= workerCost)
-        {
-            // Spawn Worker
-            //other.gameObject.GetComponent<Spawner>().Spawn();
-            other.gameObject.GetComponent<Spawner>().Spawn();
-            gameResources.AddResource(-workerCost);
-        }
     }
 
 }
