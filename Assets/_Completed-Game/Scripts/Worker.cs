@@ -6,12 +6,12 @@ public class Worker : MonoBehaviour {
 
     public float speed;
     bool atCapacity;
-    Transform cargo;
+    GameObject cargo;
     PickUpHandler pickUpHandler;
     GameResources gameResources;
-    Transform HomeZone;
+    GameObject HomeZone;
     //const string COLLECTION_ZONE = "CollectionZone";
-    public Transform aimTarget;
+    GameObject aimTarget;
     GameResources.Allegiance allegiance;
 
 
@@ -20,7 +20,7 @@ public class Worker : MonoBehaviour {
         atCapacity = false;
         //HomeZone = GameObject.Find(COLLECTION_ZONE).transform;
         aimTarget = HomeZone;
-        pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
+        //pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
         //gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
     }
 	
@@ -32,22 +32,22 @@ public class Worker : MonoBehaviour {
             {
                 //Debug.Log("CollectionZoneTarget");
                 //find direction to closest pick up
-                List<Transform> AllPickUps = pickUpHandler.availPickUps;
-                Transform Target = GetClosestPickUp(AllPickUps).transform;
-                pickUpHandler.RemoveFromAvailPickUps(Target);
+                List<GameObject> AllPickUps = PickUpHandler.availPickUps;
+                GameObject Target = GetClosestPickUp(AllPickUps);
+                PickUpHandler.RemoveFromAvailPickUps(Target);
                 aimTarget = Target;
             }
             //Debug.Log("Push Target");
             //move towards target on x, y plane
-            Vector3 movement = (aimTarget.position - transform.position);
+            Vector3 movement = (aimTarget.transform.position - transform.position);
             movement = new Vector3(movement.x, 0.0f, movement.z);
             movement.Normalize();
             GetComponent<Rigidbody>().AddForce(movement * speed);
         }
         else
         {
-            Transform Target = HomeZone;
-            Vector3 movement = (Target.position - transform.position);
+            GameObject Target = HomeZone;
+            Vector3 movement = (Target.transform.position - transform.position);
             movement = new Vector3(movement.x, 0.0f, movement.z);
             movement.Normalize();
             GetComponent<Rigidbody>().AddForce(movement * speed);
@@ -62,17 +62,17 @@ public class Worker : MonoBehaviour {
     }
 
     //function to find the closest pick up target
-    Transform GetClosestPickUp (List<Transform> PickUps)
+    GameObject GetClosestPickUp (List<GameObject> PickUps)
     {
-        Transform bestTarget = HomeZone;
+        GameObject bestTarget = HomeZone;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
-        foreach (Transform potentialTargetObj in PickUps)
+        foreach (GameObject potentialTargetObj in PickUps)
         {
             if (!potentialTargetObj.gameObject.GetComponent<PickUp>().IsCollected())
             {
-                Transform potentialTarget = potentialTargetObj.transform;
-                Vector3 directionToTarget = potentialTarget.position - currentPosition;
+                GameObject potentialTarget = potentialTargetObj;
+                Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
                 //directionToTarget.Normalize();
                 float dSqrToTarget = directionToTarget.sqrMagnitude;
                 if (dSqrToTarget < closestDistanceSqr)
@@ -90,16 +90,16 @@ public class Worker : MonoBehaviour {
     //Collision effects
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Pick Up") && !atCapacity && (other.transform.Equals(aimTarget) || pickUpHandler.IsAvailablePickUp(other.transform)))
+        if (other.gameObject.CompareTag("Pick Up") && !atCapacity && (other.gameObject.Equals(aimTarget) || PickUpHandler.IsAvailablePickUp(other.gameObject)))
         {
-            if (!other.transform.Equals(aimTarget))
+            if (!other.gameObject.Equals(aimTarget))
             {
-                pickUpHandler.RemoveFromAvailPickUps(other.transform);
-                pickUpHandler.AddToAvailPickUps(aimTarget);
+                PickUpHandler.RemoveFromAvailPickUps(other.gameObject);
+                PickUpHandler.AddToAvailPickUps(aimTarget);
             }
             PickUpCargo(other);
         }
-        else if (other.transform.Equals(HomeZone) && atCapacity)
+        else if (other.gameObject.Equals(HomeZone) && atCapacity)
         {
             DeliverCargo();
         }
@@ -146,11 +146,11 @@ public class Worker : MonoBehaviour {
     {
         aimTarget = HomeZone;
         other.gameObject.GetComponent<PickUp>().PickedUp(this.transform);
-        cargo = other.transform;
+        cargo = other.gameObject;
         atCapacity = true;
     }
 
-    public void SetHomeZone(Transform zone)
+    public void SetHomeZone(GameObject zone)
     {
         HomeZone = zone;
     }

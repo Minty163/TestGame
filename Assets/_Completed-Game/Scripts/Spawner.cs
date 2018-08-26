@@ -4,8 +4,8 @@ using System.Collections;
 public class Spawner : MonoBehaviour
 {
 
-    public Transform Worker;
-    public Transform CollectionZone;
+    public GameObject Worker;
+    public GameObject CollectionZone;
     public GameResources gameResources;
     public int workerCost;
     private Vector3 spawnDirection;
@@ -20,15 +20,16 @@ public class Spawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Spawn()
+    public GameObject Spawn()
     {
         //this.transform.position.x;
         //Instantiate(Worker, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 1), Quaternion.identity);
-        Transform createdWorker = (Transform)Instantiate(Worker, this.transform.position + (this.transform.rotation * spawnDirection), Quaternion.identity);
+        GameObject createdWorker = Instantiate(Worker, this.transform.position + (this.transform.rotation * spawnDirection), Quaternion.identity);
         Worker workerObject = createdWorker.GetComponent<Worker>();
         workerObject.SetHomeZone(CollectionZone);
         workerObject.SetAllegiance(allegiance);
         workerObject.SetGameResources(gameResources);
+        return createdWorker;
     }
 
     private void OnCollisionEnter(Collision other)

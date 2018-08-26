@@ -5,18 +5,15 @@ using UnityEngine;
 
 public class PickUpHandler : MonoBehaviour {
 
-    public int availPickUpCount;
+    public static int availPickUpCount;
     //public Transform[] availPickUps;
     //private Transform[] availPickUpsTemp;
-    public List<Transform> availPickUps;
+    public static List<GameObject> availPickUps { get; set; }
 
     // Use this for initialization
     void Start ()
     {
-        availPickUpCount = 0;
-        //availPickUps = new Transform[0];
-        //availPickUpsTemp = new Transform[0];
-        availPickUps = new List<Transform>();
+        
     }
 
     // Update is called once per frame
@@ -26,22 +23,22 @@ public class PickUpHandler : MonoBehaviour {
     }
 
     // Adding new PickUps to be List
-    public void AddToAvailPickUps(Transform PickUp)
+    public static void AddToAvailPickUps(GameObject PickUp)
     {
         availPickUps.Add(PickUp);
         availPickUpCount = availPickUps.Count;
     }
 
     // Removing new PickUps to be collected
-    public void RemoveFromAvailPickUps(Transform PickUp)
+    public static void RemoveFromAvailPickUps(GameObject PickUp)
     {
         availPickUps.Remove(PickUp);
         availPickUpCount = availPickUps.Count;
     }
 
-    internal bool IsAvailablePickUp(Transform transform)
+    internal static bool IsAvailablePickUp(GameObject gameObject)
     {
-        return availPickUps.Contains(transform);
+        return availPickUps.Contains(gameObject);
     }
 
 

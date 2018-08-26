@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
     PickUpHandler pickUpHandler;
-    GameResources gameResources;
+    GameResources allyResources;
     GameResources.Allegiance allegiance;
     //const string COLLECTION_ZONE = "CollectionZone";
 
@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour {
 		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
 
-        pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
-        //gameResources = GameObject.Find("GameResources").GetComponent<GameResources>();
+        //pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
+        allyResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
         allegiance = GameResources.Allegiance.Ally;
     }
 
@@ -48,13 +48,13 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) 
 	{
 		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
-		if (other.gameObject.CompareTag ("Pick Up") && pickUpHandler.IsAvailablePickUp(other.transform))
+		if (other.gameObject.CompareTag ("Pick Up") && PickUpHandler.IsAvailablePickUp(other.gameObject))
 		{
-            gameResources.AddResource(1);
+            allyResources.AddResource(1);
             
             // Make the other game object (the pick up) inactive, to make it disappear
             //other.gameObject.SetActive (false);
-            pickUpHandler.RemoveFromAvailPickUps(other.gameObject.transform);
+            PickUpHandler.RemoveFromAvailPickUps(other.gameObject);
             Destroy(other.gameObject);
 		}
     }
