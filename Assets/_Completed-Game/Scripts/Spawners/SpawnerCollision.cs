@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnerCollision : MonoBehaviour {
 
-    private GameResources gameResources;
     private int workerCost;
     private GameObject worker;
     private GameObject collectionZone;
@@ -19,10 +18,10 @@ public class SpawnerCollision : MonoBehaviour {
 	
     public GameObject SpawnerCollisionEvent(GameObject other, Vector3 position)
     {
-        if (other.gameObject.CompareTag("Player") && gameResources.GetResourceCount() >= workerCost)
+        if (other.gameObject.CompareTag("Player") && GameResources.GetResourceCount(allegiance) >= workerCost)
         {
             GameObject newWorker = Spawn(worker, position);
-            gameResources.AddResource(-workerCost);
+            GameResources.AddResource(-workerCost, allegiance);
             return newWorker;
         }
         return other;
@@ -49,7 +48,6 @@ public class SpawnerCollision : MonoBehaviour {
         spawnDirection = targetSpawnDirection;
         myMaterial = targetMaterial;
         allegiance = targetAllegience;
-        gameResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
     }
 
     public SpawnerCollision(int targetWorkerCost, GameObject targetWorker, GameObject targetCollectionZone, Vector3 targetSpawnDirection, Material targetMaterial, GameResources.Allegiance targetAllegience)
@@ -60,7 +58,6 @@ public class SpawnerCollision : MonoBehaviour {
         spawnDirection = targetSpawnDirection;
         myMaterial = targetMaterial;
         allegiance = targetAllegience;
-        gameResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
     }
 
 }

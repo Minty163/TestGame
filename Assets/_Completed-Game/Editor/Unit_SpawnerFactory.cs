@@ -19,7 +19,6 @@ public class Unit_SpawnerFactory {
         targetPosition = new Vector3(0, 10, 0);
         SpawnerFactory.Spawner = Resources.Load<GameObject>("Spawner");
         SpawnerFactory.WorkerTemplate = Resources.Load<GameObject>("Worker");
-        SpawnerFactory.GameResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
         SpawnerFactory.WorkerCost = 3;
         SpawnerFactory.Team1Material = Resources.Load<Material>("Materials/Team1");
         SpawnerFactory.Team2Material = Resources.Load<Material>("Materials/Team2");

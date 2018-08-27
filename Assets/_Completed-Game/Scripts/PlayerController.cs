@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour {
 	// Create public variables for player speed, and for the Text UI game objects
 	public float speed;
     PickUpHandler pickUpHandler;
-    GameResources allyResources;
     GameResources.Allegiance allegiance;
     //const string COLLECTION_ZONE = "CollectionZone";
 
@@ -22,9 +21,6 @@ public class PlayerController : MonoBehaviour {
 	{
 		// Assign the Rigidbody component to our private rb variable
 		rb = GetComponent<Rigidbody>();
-
-        //pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
-        allyResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
         allegiance = GameResources.Allegiance.Team1;
     }
 
@@ -50,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
 		if (other.gameObject.CompareTag ("Pick Up") && PickUpHandler.IsAvailablePickUp(other.gameObject))
 		{
-            allyResources.AddResource(1);
+            GameResources.AddResource(1, allegiance);
             
             // Make the other game object (the pick up) inactive, to make it disappear
             //other.gameObject.SetActive (false);

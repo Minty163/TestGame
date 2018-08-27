@@ -5,51 +5,50 @@ using UnityEngine.UI;
 
 public class GameResources : MonoBehaviour {
 
-    public Text countText;
-    public string Display;
-    //public Text winText;
-    private int resourceCount;
+    public static Text countText;
+    public static string Display;
+    public static Text countTextAlt;
+    public static string DisplayAlt;
+    public static Dictionary<Allegiance,int> resourceDictionary;
     public enum Allegiance { Team1, Team2 };
 
-    // Use this for initialization
     void Start () {
-        // Set the count to zero 
-        resourceCount = 0;
-
-        // Run the SetCountText function to update the UI (see below)
-        SetResourceText();
-
-        // Set the text property of our Win Text UI to an empty string, making the 'You Win' (game over message) blank
-        //winText.text = "";
+        resourceDictionary = new Dictionary<Allegiance, int>();
+        resourceDictionary.Add(Allegiance.Team1, 0);
+        resourceDictionary.Add(Allegiance.Team2, 0);
+        Display = "Resources: ";
+        DisplayAlt = "Enemy: ";
+        countText = GameObject.Find("CountText").GetComponent<Text>();
+        countTextAlt = GameObject.Find("EnemyCountText").GetComponent<Text>();
+        SetResourceText(Allegiance.Team1);
+        SetResourceText(Allegiance.Team2);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Update () {
 		
 	}
 
     // Create a standalone function that can update the 'countText' UI and check if the required amount to win has been achieved
-    void SetResourceText()
+    public static void SetResourceText(Allegiance allegience)
     {
-        // Update the text field of our 'countText' variable
-        countText.text = Display + resourceCount.ToString();
-
-        // Check if our 'resources' is equal to or exceeded 100
-        //if (resourceCount >= 100)
-        //{
-            // Set the text value of our 'winText'
-            //winText.text = "You Win!";
-        //}
+        if(allegience == Allegiance.Team1)
+        {
+            countText.text = Display + resourceDictionary[allegience].ToString();
+        }
+        else
+        {
+            countTextAlt.text = DisplayAlt + resourceDictionary[allegience].ToString();
+        }
     }
 
-    public void AddResource(int resources)
+    public static void AddResource(int resources, Allegiance allegience)
     {
-        resourceCount = resourceCount + resources;
-        SetResourceText();
+        resourceDictionary[allegience] = resourceDictionary[allegience] + resources;
+        SetResourceText(allegience);
     }
 
-    public int GetResourceCount()
+    public static int GetResourceCount(Allegiance allegience)
     {
-        return resourceCount;
+        return resourceDictionary[allegience];
     }
 }

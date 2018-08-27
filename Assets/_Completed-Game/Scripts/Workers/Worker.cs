@@ -8,9 +8,7 @@ public class Worker : MonoBehaviour {
     bool atCapacity;
     GameObject cargo;
     PickUpHandler pickUpHandler;
-    public GameResources gameResources { get; set; }
     public GameObject HomeZone { get; set; }
-    //const string COLLECTION_ZONE = "CollectionZone";
     GameObject aimTarget;
     public GameResources.Allegiance allegiance { get; set; }
 
@@ -134,7 +132,7 @@ public class Worker : MonoBehaviour {
         //gameScope.RemoveFromAvailPickUps(cargo.transform); //Hopefully not needed
         Destroy(cargo.gameObject);
         atCapacity = false;
-        gameResources.AddResource(1);
+        GameResources.AddResource(1, allegiance);
         // TODO Add to global resource count
 
     }
@@ -155,11 +153,6 @@ public class Worker : MonoBehaviour {
     public void SetAllegiance(GameResources.Allegiance newAllegiance)
     {
         allegiance = newAllegiance;
-    }
-
-    public void SetGameResources(GameResources newGameResources)
-    {
-        gameResources = newGameResources;
     }
 
     /*

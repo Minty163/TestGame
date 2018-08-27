@@ -1,12 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSetup : MonoBehaviour {
 
 
     // Use this for initialization
     void Start () {
+        //GameResources
+        GameResources.resourceDictionary = new Dictionary<GameResources.Allegiance, int>();
+        GameResources.resourceDictionary.Add(GameResources.Allegiance.Team1, 0);
+        GameResources.resourceDictionary.Add(GameResources.Allegiance.Team2, 0);
+        GameResources.Display = "Resources: ";
+        GameResources.DisplayAlt = "Enemy: ";
+        GameResources.countText = GameObject.Find("CountText").GetComponent<Text>();
+        GameResources.countTextAlt = GameObject.Find("EnemyCountText").GetComponent<Text>();
+        GameResources.SetResourceText(GameResources.Allegiance.Team1);
+        GameResources.SetResourceText(GameResources.Allegiance.Team2);
         //PickUps
         PickUpHandler.availPickUps = new List<GameObject>();
         PickUpZoneFactory.PickUpZone = Resources.Load<GameObject>("PickUpZone");
@@ -20,14 +31,12 @@ public class GameSetup : MonoBehaviour {
         //Spawner
         SpawnerFactory.Spawner = Resources.Load<GameObject>("Spawner");
         SpawnerFactory.WorkerTemplate = Resources.Load<GameObject>("Worker");
-        SpawnerFactory.GameResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
         SpawnerFactory.WorkerCost = 3;
         SpawnerFactory.Team1Material = Resources.Load<Material>("Materials/Team1");
         SpawnerFactory.Team2Material = Resources.Load<Material>("Materials/Team2");
         SpawnerFactory.DefaultMaterial = Resources.Load<Material>("Materials/Default");
         //Worker
         WorkerFactory.WorkerTemplate = Resources.Load<GameObject>("Worker");
-        WorkerFactory.GameResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
         WorkerFactory.Team1Material = Resources.Load<Material>("Materials/Team1");
         WorkerFactory.Team2Material = Resources.Load<Material>("Materials/Team2");
         WorkerFactory.DefaultMaterial = Resources.Load<Material>("Materials/Default");

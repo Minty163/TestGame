@@ -6,7 +6,6 @@ public class Spawner : MonoBehaviour
 
     public GameObject worker { get; set; }
     public GameObject collectionZone { get; set; }
-    public GameResources gameResources { get; set; }
     public int workerCost { get; set; }
     public Vector3 spawnDirection { get; set; }
     public GameResources.Allegiance allegiance { get; set; }

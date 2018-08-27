@@ -5,7 +5,6 @@ using UnityEngine;
 public class WorkerFactory : MonoBehaviour {
 
     public static GameObject WorkerTemplate { get; set; }
-    public static GameResources GameResources { get; set; }
     public static Material Team1Material { get; set; }
     public static Material Team2Material { get; set; }
     public static Material DefaultMaterial { get; set; }
@@ -14,7 +13,6 @@ public class WorkerFactory : MonoBehaviour {
     {
         GameObject instance = Instantiate<GameObject>(WorkerTemplate, targetPosition, targetRotation);
         instance.GetComponent<Worker>().HomeZone = collectionZone;
-        instance.GetComponent<Worker>().gameResources = GameResources;
         instance.GetComponent<Worker>().allegiance = allegiance;
         switch (allegiance)
         {
