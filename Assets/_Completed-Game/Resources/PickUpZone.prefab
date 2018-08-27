@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114148112136862096}
   m_Layer: 0
   m_Name: PickUpZone
-  m_TagString: Untagged
+  m_TagString: PickUpZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,5 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dcc16df4c7810479e0e4c55ba7fd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawn: {fileID: 4759749655149294, guid: 83a9f6978de8f4ed58b9e0d00a781d5d, type: 2}
   spawnChance: 0.001

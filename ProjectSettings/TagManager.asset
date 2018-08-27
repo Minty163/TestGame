@@ -8,6 +8,7 @@ TagManager:
   - Spawner
   - Worker
   - CollectionZone
+  - PickUpZone
   layers:
   - Default
   - TransparentFX

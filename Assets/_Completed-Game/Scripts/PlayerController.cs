@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 
         //pickUpHandler = GameObject.Find("PickUpHandler").GetComponent<PickUpHandler>();
         allyResources = GameObject.Find("AllyResources").GetComponent<GameResources>();
-        allegiance = GameResources.Allegiance.Ally;
+        allegiance = GameResources.Allegiance.Team1;
     }
 
 	// Each physics step..

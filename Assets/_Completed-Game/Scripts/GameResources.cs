@@ -9,7 +9,7 @@ public class GameResources : MonoBehaviour {
     public string Display;
     //public Text winText;
     private int resourceCount;
-    public enum Allegiance { Ally, Enemy };
+    public enum Allegiance { Team1, Team2 };
 
     // Use this for initialization
     void Start () {

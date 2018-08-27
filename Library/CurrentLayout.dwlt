@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 642}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -38,10 +38,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 554
-    width: 524
+    width: 552
     height: 393
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -63,14 +63,14 @@ MonoBehaviour:
   - {fileID: 2}
   m_Position:
     serializedVersion: 2
-    x: 1396
+    x: 1368
     y: 0
-    width: 524
+    width: 552
     height: 947
   m_MinSize: {x: 277, y: 192}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 189
+  controlID: 159
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -86,11 +86,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 311
+    y: 309
     width: 799
     height: 267
-  m_MinSize: {x: 104, y: 121}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 578
+    y: 576
     width: 799
-    height: 369
+    height: 371
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
   m_ActualView: {fileID: 20}
@@ -138,14 +138,14 @@ MonoBehaviour:
   - {fileID: 5}
   m_Position:
     serializedVersion: 2
-    x: 597
+    x: 569
     y: 0
     width: 799
     height: 947
   m_MinSize: {x: 234, y: 592}
   m_MaxSize: {x: 10004, y: 18042}
   vertical: 1
-  controlID: 10
+  controlID: 103
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 592}
   m_MaxSize: {x: 18008, y: 18042}
   vertical: 0
-  controlID: 9
+  controlID: 102
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,12 +253,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 597
+    width: 569
     height: 947
   m_MinSize: {x: 202, y: 421}
   m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 220
+  controlID: 10
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -276,9 +276,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 799
-    height: 311
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 309
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -300,7 +300,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 524
+    width: 552
     height: 554
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -325,10 +325,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 597
-    height: 486
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+    width: 569
+    height: 487
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -349,9 +349,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 486
-    width: 597
-    height: 461
+    y: 487
+    width: 569
+    height: 460
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
@@ -378,9 +378,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1398
+    x: 1370
     y: 646
-    width: 522
+    width: 550
     height: 372
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
@@ -512,9 +512,9 @@ MonoBehaviour:
     - id: '[New Unity Project][suite]'
       name: New Unity Project
       fullName: New Unity Project
-      resultStatus: 2
-      duration: 0.0647496
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.1301609
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -526,9 +526,9 @@ MonoBehaviour:
     - id: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
       fullName: C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-      resultStatus: 2
-      duration: 0.0365847
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.1077995
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -537,12 +537,12 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[New Unity Project][suite]'
-    - id: '[Assembly-CSharp-Editor][Unit_Spawner][suite]'
-      name: Unit_Spawner
-      fullName: Unit_Spawner
-      resultStatus: 2
-      duration: 0.0315104
-      messages: One or more child tests had errors
+    - id: '[Assembly-CSharp-Editor][Unit_CollectionZoneFactory][suite]'
+      name: Unit_CollectionZoneFactory
+      fullName: Unit_CollectionZoneFactory
+      resultStatus: 1
+      duration: 0.0263092
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -551,31 +551,292 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
-    - id: '[Assembly-CSharp-Editor][Unit_Spawner.Leeearning]'
-      name: Leeearning
-      fullName: Unit_Spawner.Leeearning
-      resultStatus: 2
-      duration: 0.0196872
-      messages: "  Expected: (0.0, 0.5, -25.0)\r\n  But was:  (0.0, 0.0, 0.0)\r\n"
+    - id: '[Assembly-CSharp-Editor][Unit_CollectionZoneFactory.PickUpZoneIsCreated]'
+      name: PickUpZoneIsCreated
+      fullName: Unit_CollectionZoneFactory.PickUpZoneIsCreated
+      resultStatus: 1
+      duration: 0.0106843
+      messages: 
       output: 
-      stacktrace: "at Unit_Spawner.Leeearning () [0x0003b] in C:\\Users\\Public\\Documents\\Unity
-        Projects\\TestGame\\TestGame\\Assets\\_Completed-Game\\Editor\\Unit_Spawner.cs:72\r\n"
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
       categories:
       - Uncategorized
-      parentID: '[Assembly-CSharp-Editor][Unit_Spawner][suite]'
-    m_ResultText: "Leeearning (0.020s)\n---\nExpected: (0.0, 0.5, -25.0)\r\n  But
-      was:  (0.0, 0.0, 0.0)\n---\nat Unit_Spawner.Leeearning () [0x0003b] in C:\\Users\\Public\\Documents\\Unity
-      Projects\\TestGame\\TestGame\\Assets\\_Completed-Game\\Editor\\Unit_Spawner.cs:72"
-    m_ResultStacktrace: "at Unit_Spawner.Leeearning () [0x0003b] in C:\\Users\\Public\\Documents\\Unity
-      Projects\\TestGame\\TestGame\\Assets\\_Completed-Game\\Editor\\Unit_Spawner.cs:72\r\n"
+      parentID: '[Assembly-CSharp-Editor][Unit_CollectionZoneFactory][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_CollectionZoneFactory.PickUpZoneIsCreatedInCorrectPlace]'
+      name: PickUpZoneIsCreatedInCorrectPlace
+      fullName: Unit_CollectionZoneFactory.PickUpZoneIsCreatedInCorrectPlace
+      resultStatus: 1
+      duration: 0.002131
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_CollectionZoneFactory][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUp][suite]'
+      name: Unit_PickUp
+      fullName: Unit_PickUp
+      resultStatus: 1
+      duration: 0.0125369
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUp.PickUpIsCollectedCheck]'
+      name: PickUpIsCollectedCheck
+      fullName: Unit_PickUp.PickUpIsCollectedCheck
+      resultStatus: 1
+      duration: 0.0004772
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUp][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUp.PickUpIsNotCollectedCheck]'
+      name: PickUpIsNotCollectedCheck
+      fullName: Unit_PickUp.PickUpIsNotCollectedCheck
+      resultStatus: 1
+      duration: 0.0002603
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUp][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUp.PickUpIsPickedUp]'
+      name: PickUpIsPickedUp
+      fullName: Unit_PickUp.PickUpIsPickedUp
+      resultStatus: 1
+      duration: 0.0001155
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUp][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler][suite]'
+      name: Unit_PickUpHandler
+      fullName: Unit_PickUpHandler
+      resultStatus: 1
+      duration: 0.0136038
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler.PickUpIsAddedToList]'
+      name: PickUpIsAddedToList
+      fullName: Unit_PickUpHandler.PickUpIsAddedToList
+      resultStatus: 1
+      duration: 0.001024
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUpHandler][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler.PickUpIsRemovedFromList]'
+      name: PickUpIsRemovedFromList
+      fullName: Unit_PickUpHandler.PickUpIsRemovedFromList
+      resultStatus: 1
+      duration: 0.0002522
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUpHandler][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpZoneFactory][suite]'
+      name: Unit_PickUpZoneFactory
+      fullName: Unit_PickUpZoneFactory
+      resultStatus: 1
+      duration: 0.0150365
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpZoneFactory.PickUpZoneIsCreated]'
+      name: PickUpZoneIsCreated
+      fullName: Unit_PickUpZoneFactory.PickUpZoneIsCreated
+      resultStatus: 1
+      duration: 0.0010324
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUpZoneFactory][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpZoneFactory.PickUpZoneIsCreatedInCorrectPlace]'
+      name: PickUpZoneIsCreatedInCorrectPlace
+      fullName: Unit_PickUpZoneFactory.PickUpZoneIsCreatedInCorrectPlace
+      resultStatus: 1
+      duration: 0.0003534
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUpZoneFactory][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_SpawnerCollision][suite]'
+      name: Unit_SpawnerCollision
+      fullName: Unit_SpawnerCollision
+      resultStatus: 1
+      duration: 0.0210438
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_SpawnerCollision.WorkerCostsResources]'
+      name: WorkerCostsResources
+      fullName: Unit_SpawnerCollision.WorkerCostsResources
+      resultStatus: 1
+      duration: 0.0020859
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_SpawnerCollision][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_SpawnerCollision.WorkerIsSpawned]'
+      name: WorkerIsSpawned
+      fullName: Unit_SpawnerCollision.WorkerIsSpawned
+      resultStatus: 1
+      duration: 0.0004254
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_SpawnerCollision][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_SpawnerCollision.WorkerIsSpawnedInCorrectPlace]'
+      name: WorkerIsSpawnedInCorrectPlace
+      fullName: Unit_SpawnerCollision.WorkerIsSpawnedInCorrectPlace
+      resultStatus: 1
+      duration: 0.0004374
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_SpawnerCollision][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_SpawnerFactory][suite]'
+      name: Unit_SpawnerFactory
+      fullName: Unit_SpawnerFactory
+      resultStatus: 1
+      duration: 0.0137059
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentID: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_SpawnerFactory.SpawnerIsCreated]'
+      name: SpawnerIsCreated
+      fullName: Unit_SpawnerFactory.SpawnerIsCreated
+      resultStatus: 1
+      duration: 0.0007774
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_SpawnerFactory][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_SpawnerFactory.SpawnerIsCreatedInCorrectPlace]'
+      name: SpawnerIsCreatedInCorrectPlace
+      fullName: Unit_SpawnerFactory.SpawnerIsCreatedInCorrectPlace
+      resultStatus: 1
+      duration: 0.0003219
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_SpawnerFactory][suite]'
+    m_ResultText: WorkerCostsResources (0.002s)
+    m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e3411d49
-      m_LastClickedID: 1226654179
+      m_SelectedIDs: d246a032
+      m_LastClickedID: 849364690
       m_ExpandedIDs: c10e5cbed5ce14c9e019e610769ea712168a0b1effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -622,8 +883,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 599
-    y: 403
+    x: 571
+    y: 401
     width: 795
     height: 246
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -647,16 +908,16 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 599
+    x: 571
     y: 92
     width: 795
-    height: 290
+    height: 288
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 56320000
-    m_LastClickedID: 12886
-    m_ExpandedIDs: bc97ffffbe97ffffc097ffffc497ffffe097ffff0698ffffb49cffffb4a1ffffdaa1fffffea5ffff1caaffff42aaffffe8adffff06b9ffff2cb9ffff24bdffffccc0fffff2c0ffffdec4ffff7accffffa0ccffff7ad0ffff4ce1ffff74e1fffffee5ffffe6fbffff000000006c320000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 3e340000
+    m_LastClickedID: 13374
+    m_ExpandedIDs: a64dffffa44fffff766ffffff88bfffffc8dffff0494ffff5899ffffe6fbffff000000009e340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -700,9 +961,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1398
+    x: 1370
     y: 92
-    width: 522
+    width: 550
     height: 533
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
@@ -734,10 +995,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 599
-    y: 670
+    x: 571
+    y: 668
     width: 795
-    height: 348
+    height: 350
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -751,20 +1012,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Completed-Game/Prefabs
+    - Assets/_Completed-Game/Editor
   m_ViewMode: 1
-  m_StartGridSize: 50
+  m_StartGridSize: 75
   m_LastFolders:
-  - Assets/_Completed-Game/Prefabs
-  m_LastFoldersGridSize: 50
+  - Assets/_Completed-Game/Editor
+  m_LastFoldersGridSize: 75
   m_LastProjectPath: C:\Users\Public\Documents\Unity Projects\TestGame\TestGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 760b0000
-    m_LastClickedID: 2934
-    m_ExpandedIDs: 000000005c090000ea090000a40a0000b80a0000c80a0000ca0b0000ce0b000000ca9a3b
+    m_SelectedIDs: c0090000
+    m_LastClickedID: 2496
+    m_ExpandedIDs: 00000000700900008e090000000a0000a20a0000c20a0000d60a0000e60a0000dc0b0000e20b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -792,7 +1053,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c090000ea090000a40a0000b80a0000c80a0000ca0b0000ce0b0000
+    m_ExpandedIDs: 00000000700900008e090000000a0000a20a0000c20a0000d60a0000e60a0000dc0b0000e20b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -845,7 +1106,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 50
+    m_GridSize: 75
   m_DirectoriesAreaWidth: 217
 --- !u!114 &21
 MonoBehaviour:
@@ -868,9 +1129,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 578
-    width: 595
-    height: 440
+    y: 579
+    width: 567
+    height: 439
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -882,10 +1143,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -297.5
-    m_HBaseRangeMax: 297.5
-    m_VBaseRangeMin: -211.5
-    m_VBaseRangeMax: 211.5
+    m_HBaseRangeMin: -283.5
+    m_HBaseRangeMax: 283.5
+    m_VBaseRangeMin: -211
+    m_VBaseRangeMax: 211
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -903,25 +1164,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 595
-      height: 423
+      width: 567
+      height: 422
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 297.5, y: 211.5}
+    m_Translation: {x: 283.5, y: 211}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -297.5
-      y: -211.5
-      width: 595
-      height: 423
+      x: -283.5
+      y: -211
+      width: 567
+      height: 422
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 595, y: 440}
+  m_LastWindowPixelSize: {x: 567, y: 439}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000100
@@ -948,8 +1209,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 595
-    height: 465
+    width: 567
+    height: 466
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
   lastFramingTime: 7056.056591066623
