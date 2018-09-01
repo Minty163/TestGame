@@ -23,7 +23,7 @@ public class PickUpZone : MonoBehaviour {
         Trigger = Random.Range(Min,Max);
         if (Trigger < spawnChance)
         {
-            PickUpHandler.AddToAvailPickUps(SpawnPickUp());
+            PickUpHandler.AddToOpenPickUp(SpawnPickUp());
         }
 	}
 

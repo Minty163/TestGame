@@ -44,13 +44,11 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) 
 	{
 		// ..and if the game object we intersect has the tag 'Pick Up' assigned to it..
-		if (other.gameObject.CompareTag ("Pick Up") && PickUpHandler.IsAvailablePickUp(other.gameObject))
+		if (other.gameObject.CompareTag ("Pick Up") && PickUpHandler.IsAvailablePickUp(other.gameObject, allegiance))
 		{
             GameResources.AddResource(1, allegiance);
-            
-            // Make the other game object (the pick up) inactive, to make it disappear
-            //other.gameObject.SetActive (false);
-            PickUpHandler.RemoveFromAvailPickUps(other.gameObject);
+            PickUpHandler.CarryPickUp(other.gameObject, allegiance);
+            PickUpHandler.DeliverPickUp(other.gameObject, allegiance);
             Destroy(other.gameObject);
 		}
     }

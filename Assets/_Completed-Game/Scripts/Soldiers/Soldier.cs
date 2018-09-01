@@ -45,7 +45,7 @@ public class Soldier : MonoBehaviour {
         GetComponent<Rigidbody>().AddForce(0.0f, speed * (0.5f - this.transform.position.y), 0.0f);
         //GetComponent<Rigidbody>().AddForce()
 
-        if (readyToFire)
+        if (readyToFire && (aimTarget.transform.position - (this.transform.position + fireFromAdjusted)).magnitude < (Mathf.Pow(fireSpeed, 2)/9.81f))
         {
             FireCannon(aimTarget.transform);
         }
@@ -53,7 +53,7 @@ public class Soldier : MonoBehaviour {
 
     GameObject FireCannon(Transform targetTransform)
     {
-        float gravity = 9.81f;
+        //float gravity = 9.81f;
         fireFromAdjusted = AdjustVectorToSoldierRotation(fireFrom);
         float range = (targetTransform.position - (this.transform.position + fireFromAdjusted)).magnitude;
         //float a = Mathf.Pow(fireSpeed, 4) - (Mathf.Pow(range, 2) * Mathf.Pow(9.81f, 2));

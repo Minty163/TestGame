@@ -27,9 +27,9 @@ public class Worker : MonoBehaviour {
             {
                 //Debug.Log("CollectionZoneTarget");
                 //find direction to closest pick up
-                List<GameObject> AllPickUps = PickUpHandler.availPickUps;
+                List<GameObject> AllPickUps = PickUpHandler.openPickUpDictionary[allegiance];
                 GameObject Target = GetClosestPickUp(AllPickUps);
-                PickUpHandler.RemoveFromAvailPickUps(Target);
+                PickUpHandler.TargetPickUp(Target, allegiance);
                 aimTarget = Target;
             }
             //Debug.Log("Push Target");
@@ -85,12 +85,11 @@ public class Worker : MonoBehaviour {
     //Collision effects
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick Up") && !atCapacity && (other.gameObject.Equals(aimTarget) || PickUpHandler.IsAvailablePickUp(other.gameObject)))
+        if (other.gameObject.CompareTag("Pick Up") && !atCapacity && (other.gameObject.Equals(aimTarget) || PickUpHandler.IsAvailablePickUp(other.gameObject, allegiance)))
         {
             if (!other.gameObject.Equals(aimTarget))
             {
-                PickUpHandler.RemoveFromAvailPickUps(other.gameObject);
-                PickUpHandler.AddToAvailPickUps(aimTarget);
+                PickUpHandler.UntargetPickUp(aimTarget, allegiance);
             }
             PickUpCargo(other);
         }
@@ -130,6 +129,7 @@ public class Worker : MonoBehaviour {
     private void DeliverCargo()
     {
         //gameScope.RemoveFromAvailPickUps(cargo.transform); //Hopefully not needed
+        PickUpHandler.DeliverPickUp(cargo.gameObject, allegiance);
         Destroy(cargo.gameObject);
         atCapacity = false;
         GameResources.AddResource(1, allegiance);
@@ -139,6 +139,7 @@ public class Worker : MonoBehaviour {
 
     private void PickUpCargo(Collider other)
     {
+        PickUpHandler.CarryPickUp(other.gameObject, allegiance);
         aimTarget = HomeZone;
         other.gameObject.GetComponent<PickUp>().PickedUp(this.transform);
         cargo = other.gameObject;

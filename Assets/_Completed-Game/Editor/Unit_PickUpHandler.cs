@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,28 +20,46 @@ public class Unit_PickUpHandler {
     [SetUp]
     public void SetUp()
     {
-        PickUpHandler.availPickUps = new List<GameObject>();
+        PickUpHandler.openPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
+        PickUpHandler.targetedPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
+        PickUpHandler.carriedPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
+        foreach (GameResources.Allegiance item in Enum.GetValues(typeof(GameResources.Allegiance)))
+        {
+            PickUpHandler.openPickUpDictionary.Add(item, new List<GameObject>());
+            PickUpHandler.targetedPickUpDictionary.Add(item, new List<GameObject>());
+            PickUpHandler.carriedPickUpDictionary.Add(item, new List<GameObject>());
+        }
     }
 
     [Test]
-    public void PickUpIsAddedToList()
+    public void PickUpIsAddedToOpenList()
     {
         //Arrange
         //Act
-        PickUpHandler.AddToAvailPickUps(pickUp);
+        PickUpHandler.AddToOpenPickUp(pickUp);
         //Assert
-        Assert.Contains(pickUp, PickUpHandler.availPickUps);
+        Assert.Contains(pickUp, PickUpHandler.openPickUpDictionary[GameResources.Allegiance.Team1]);
     }
 
     [Test]
-    public void PickUpIsRemovedFromList()
+    public void PickUpIsRemovedFromOpenList()
     {
         //Arrange
-        PickUpHandler.availPickUps.Add(pickUp);
+        PickUpHandler.AddToOpenPickUp(pickUp);
         //Act
-        PickUpHandler.RemoveFromAvailPickUps(pickUp);
+        PickUpHandler.TargetPickUp(pickUp, GameResources.Allegiance.Team1);
         //Assert
-        Assert.False(PickUpHandler.availPickUps.Contains(pickUp));
-        //Assert.Equals(0, pickUpCount);
+        Assert.False(PickUpHandler.openPickUpDictionary[GameResources.Allegiance.Team1].Contains(pickUp));
+    }
+
+    [Test]
+    public void PickUpIsAddedToTargetedList()
+    {
+        //Arrange
+        PickUpHandler.AddToOpenPickUp(pickUp);
+        //Act
+        PickUpHandler.TargetPickUp(pickUp, GameResources.Allegiance.Team1);
+        //Assert
+        Assert.True(PickUpHandler.targetedPickUpDictionary[GameResources.Allegiance.Team1].Contains(pickUp));
     }
 }

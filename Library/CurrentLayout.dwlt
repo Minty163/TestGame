@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 713, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 679, y: 442}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 2110
+  controlID: 606
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,10 +131,10 @@ MonoBehaviour:
     y: 0
     width: 826
     height: 947
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 2111
+  controlID: 607
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -178,8 +178,8 @@ MonoBehaviour:
     y: 486
     width: 826
     height: 461
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -205,10 +205,10 @@ MonoBehaviour:
     y: 0
     width: 542
     height: 947
-  m_MinSize: {x: 234, y: 492}
-  m_MaxSize: {x: 10004, y: 14042}
+  m_MinSize: {x: 200, y: 321}
+  m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 2087
+  controlID: 465
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,8 +227,8 @@ MonoBehaviour:
     y: 0
     width: 542
     height: 442
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -252,14 +252,14 @@ MonoBehaviour:
     y: 442
     width: 542
     height: 505
-  m_MinSize: {x: 234, y: 271}
-  m_MaxSize: {x: 10004, y: 10021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 104, y: 121}
+  m_MaxSize: {x: 4004, y: 4021}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 192}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 2025
+  controlID: 523
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -359,7 +359,7 @@ MonoBehaviour:
     width: 824
     height: 440
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -519,9 +519,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fe1afeff
-    m_LastClickedID: -124162
-    m_ExpandedIDs: 96f4ffff98f4ffffe6fbffff00000000
+    m_SelectedIDs: 343a0000
+    m_LastClickedID: 14900
+    m_ExpandedIDs: d68fffff08a7ffffb2a8ffffa4c5ffff3ac9ffffecd3ffffe0d5ffff66dafffffedeffffe6fbffff000000009610000044340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -539,8 +539,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
-  m_ExpandedScenes:
-  - Roll-a-ball
+  m_ExpandedScenes: []
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -582,19 +581,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Completed-Game/Resources/Soldiers
+    - Assets/_Completed-Game/Editor
   m_ViewMode: 1
   m_StartGridSize: 40
   m_LastFolders:
-  - Assets/_Completed-Game/Resources/Soldiers
+  - Assets/_Completed-Game/Editor
   m_LastFoldersGridSize: 40
   m_LastProjectPath: C:\Users\Public\Documents\Unity Projects\TestGame\TestGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 800b0000
-    m_LastClickedID: 2944
+    m_SelectedIDs: 0a0b0000
+    m_LastClickedID: 2826
     m_ExpandedIDs: 00000000780a0000b20a0000a40b0000ea0c0000240d00004c0d0000700d0000440f00004c0f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -648,9 +647,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: e6080000
+    m_LastClickedInstanceID: 2278
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 000000003e0b0000e275fdff1e0b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -891,7 +890,7 @@ MonoBehaviour:
       name: New Unity Project
       fullName: New Unity Project
       resultStatus: 1
-      duration: 0.13781
+      duration: 0.1206611
       messages: 
       output: 
       stacktrace: 
@@ -905,7 +904,7 @@ MonoBehaviour:
       name: Assembly-CSharp-Editor.dll
       fullName: C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
       resultStatus: 1
-      duration: 0.1131323
+      duration: 0.1018956
       messages: 
       output: 
       stacktrace: 
@@ -919,7 +918,7 @@ MonoBehaviour:
       name: Unit_CollectionZoneFactory
       fullName: Unit_CollectionZoneFactory
       resultStatus: 1
-      duration: 0.030811
+      duration: 0.0223392
       messages: 
       output: 
       stacktrace: 
@@ -933,7 +932,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreated
       fullName: Unit_CollectionZoneFactory.PickUpZoneIsCreated
       resultStatus: 1
-      duration: 0.0142205
+      duration: 0.0088687
       messages: 
       output: 
       stacktrace: 
@@ -948,7 +947,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreatedInCorrectPlace
       fullName: Unit_CollectionZoneFactory.PickUpZoneIsCreatedInCorrectPlace
       resultStatus: 1
-      duration: 0.0022136
+      duration: 0.0019374
       messages: 
       output: 
       stacktrace: 
@@ -963,7 +962,7 @@ MonoBehaviour:
       name: Unit_PickUp
       fullName: Unit_PickUp
       resultStatus: 1
-      duration: 0.0127484
+      duration: 0.0126043
       messages: 
       output: 
       stacktrace: 
@@ -977,7 +976,7 @@ MonoBehaviour:
       name: PickUpIsCollectedCheck
       fullName: Unit_PickUp.PickUpIsCollectedCheck
       resultStatus: 1
-      duration: 0.0004622
+      duration: 0.0004856
       messages: 
       output: 
       stacktrace: 
@@ -992,7 +991,7 @@ MonoBehaviour:
       name: PickUpIsNotCollectedCheck
       fullName: Unit_PickUp.PickUpIsNotCollectedCheck
       resultStatus: 1
-      duration: 0.0003081
+      duration: 0.0002524
       messages: 
       output: 
       stacktrace: 
@@ -1007,7 +1006,7 @@ MonoBehaviour:
       name: PickUpIsPickedUp
       fullName: Unit_PickUp.PickUpIsPickedUp
       resultStatus: 1
-      duration: 0.0001137
+      duration: 0.0000943
       messages: 
       output: 
       stacktrace: 
@@ -1022,7 +1021,7 @@ MonoBehaviour:
       name: Unit_PickUpHandler
       fullName: Unit_PickUpHandler
       resultStatus: 1
-      duration: 0.0131258
+      duration: 0.0131165
       messages: 
       output: 
       stacktrace: 
@@ -1032,11 +1031,11 @@ MonoBehaviour:
       isSuite: 1
       categories: []
       parentID: '[C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
-    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler.PickUpIsAddedToList]'
-      name: PickUpIsAddedToList
-      fullName: Unit_PickUpHandler.PickUpIsAddedToList
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler.PickUpIsAddedToOpenList]'
+      name: PickUpIsAddedToOpenList
+      fullName: Unit_PickUpHandler.PickUpIsAddedToOpenList
       resultStatus: 1
-      duration: 0.0009923
+      duration: 0.0010743
       messages: 
       output: 
       stacktrace: 
@@ -1047,11 +1046,26 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[Assembly-CSharp-Editor][Unit_PickUpHandler][suite]'
-    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler.PickUpIsRemovedFromList]'
-      name: PickUpIsRemovedFromList
-      fullName: Unit_PickUpHandler.PickUpIsRemovedFromList
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler.PickUpIsAddedToTargetedList]'
+      name: PickUpIsAddedToTargetedList
+      fullName: Unit_PickUpHandler.PickUpIsAddedToTargetedList
       resultStatus: 1
-      duration: 0.0001431
+      duration: 0.0001285
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentID: '[Assembly-CSharp-Editor][Unit_PickUpHandler][suite]'
+    - id: '[Assembly-CSharp-Editor][Unit_PickUpHandler.PickUpIsRemovedFromOpenList]'
+      name: PickUpIsRemovedFromOpenList
+      fullName: Unit_PickUpHandler.PickUpIsRemovedFromOpenList
+      resultStatus: 1
+      duration: 0.0001203
       messages: 
       output: 
       stacktrace: 
@@ -1066,7 +1080,7 @@ MonoBehaviour:
       name: Unit_PickUpZoneFactory
       fullName: Unit_PickUpZoneFactory
       resultStatus: 1
-      duration: 0.0146352
+      duration: 0.0142767
       messages: 
       output: 
       stacktrace: 
@@ -1080,7 +1094,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreated
       fullName: Unit_PickUpZoneFactory.PickUpZoneIsCreated
       resultStatus: 1
-      duration: 0.0008487
+      duration: 0.000523
       messages: 
       output: 
       stacktrace: 
@@ -1095,7 +1109,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreatedInCorrectPlace
       fullName: Unit_PickUpZoneFactory.PickUpZoneIsCreatedInCorrectPlace
       resultStatus: 1
-      duration: 0.0002652
+      duration: 0.0002685
       messages: 
       output: 
       stacktrace: 
@@ -1110,7 +1124,7 @@ MonoBehaviour:
       name: Unit_SpawnerCollision
       fullName: Unit_SpawnerCollision
       resultStatus: 1
-      duration: 0.0217104
+      duration: 0.018433
       messages: 
       output: 
       stacktrace: 
@@ -1124,7 +1138,7 @@ MonoBehaviour:
       name: WorkerCostsResources
       fullName: Unit_SpawnerCollision.WorkerCostsResources
       resultStatus: 1
-      duration: 0.0021157
+      duration: 0.0011482
       messages: 
       output: 
       stacktrace: 
@@ -1139,7 +1153,7 @@ MonoBehaviour:
       name: WorkerIsSpawned
       fullName: Unit_SpawnerCollision.WorkerIsSpawned
       resultStatus: 1
-      duration: 0.0002526
+      duration: 0.000255
       messages: 
       output: 
       stacktrace: 
@@ -1154,7 +1168,7 @@ MonoBehaviour:
       name: WorkerIsSpawnedInCorrectPlace
       fullName: Unit_SpawnerCollision.WorkerIsSpawnedInCorrectPlace
       resultStatus: 1
-      duration: 0.0002772
+      duration: 0.0002844
       messages: 
       output: 
       stacktrace: 
@@ -1169,7 +1183,7 @@ MonoBehaviour:
       name: Unit_SpawnerFactory
       fullName: Unit_SpawnerFactory
       resultStatus: 1
-      duration: 0.0145236
+      duration: 0.0154121
       messages: 
       output: 
       stacktrace: 
@@ -1183,7 +1197,7 @@ MonoBehaviour:
       name: SpawnerIsCreated
       fullName: Unit_SpawnerFactory.SpawnerIsCreated
       resultStatus: 1
-      duration: 0.0007159
+      duration: 0.0003891
       messages: 
       output: 
       stacktrace: 
@@ -1198,7 +1212,7 @@ MonoBehaviour:
       name: SpawnerIsCreatedInCorrectPlace
       fullName: Unit_SpawnerFactory.SpawnerIsCreatedInCorrectPlace
       resultStatus: 1
-      duration: 0.0001926
+      duration: 0.0001901
       messages: 
       output: 
       stacktrace: 
@@ -1209,12 +1223,15 @@ MonoBehaviour:
       categories:
       - Uncategorized
       parentID: '[Assembly-CSharp-Editor][Unit_SpawnerFactory][suite]'
-    m_ResultText: WorkerCostsResources (0.002s)
-    m_ResultStacktrace: 
+    m_ResultText: "PickUpIsRemovedFromList (0.000s)\n---\nExpected: False\r\n  But
+      was:  True\n---\nat Unit_PickUpHandler.PickUpIsRemovedFromList () [0x0002e]
+      in C:\\Users\\Public\\Documents\\Unity Projects\\TestGame\\TestGame\\Assets\\_Completed-Game\\Editor\\Unit_PickUpHandler.cs:52"
+    m_ResultStacktrace: "at Unit_PickUpHandler.PickUpIsRemovedFromList () [0x0002e]
+      in C:\\Users\\Public\\Documents\\Unity Projects\\TestGame\\TestGame\\Assets\\_Completed-Game\\Editor\\Unit_PickUpHandler.cs:52\r\n"
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d246a032
-      m_LastClickedID: 849364690
+      m_SelectedIDs: 51346a73
+      m_LastClickedID: 1936340049
       m_ExpandedIDs: c10e5cbed5ce14c9e019e610769ea712168a0b1effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
