@@ -9,6 +9,7 @@ TagManager:
   - Worker
   - CollectionZone
   - PickUpZone
+  - Bullet
   layers:
   - Default
   - TransparentFX
