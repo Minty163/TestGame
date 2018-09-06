@@ -6,6 +6,10 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
+        if(other.gameObject.tag == "Soldier")
+        {
+            other.gameObject.GetComponent<Soldier>().TakeDamage(1);
+        }
         Destroy(this.gameObject);
         /*
         if (other.gameObject.CompareTag("Pick Up") && !atCapacity && (other.gameObject.Equals(aimTarget) || PickUpHandler.IsAvailablePickUp(other.gameObject)))

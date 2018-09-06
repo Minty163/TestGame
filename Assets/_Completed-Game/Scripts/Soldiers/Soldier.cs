@@ -1,17 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Soldier : MonoBehaviour {
 
     public float speed;
-    public float fireSpeed = 8;
-    GameObject aimTarget;
+    public float fireSpeed;
+    public GameObject aimTarget;
     public GameResources.Allegiance allegiance { get; set; }
+    public int Health;
+    public int MaxHealth;
     public Vector3 fireFrom;
     private bool readyToFire;
     private Vector3 directionOfTarget;
+    private Quaternion turnQuat;
     private Vector3 fireFromAdjusted;
+    public SoldierAI.State AIState;
+    private float maxRange;
+    private float targetRange;
+    public Image HealthBar;
+    public float Fill;
 
 
     // Use this for initialization
@@ -19,58 +28,87 @@ public class Soldier : MonoBehaviour {
     {
         fireFrom = new Vector3(0, 0.26f, 0.4f);
         readyToFire = true;
-        aimTarget = GameObject.Find("Player");
+        //aimTarget = GameObject.Find("Player");
+        MaxHealth = 3;
+        Health = 3;
+        AIState = SoldierAI.State.Marching;
+        fireSpeed = 8;
+        maxRange = (Mathf.Pow(fireSpeed, 2) / 9.81f);
+        //HealthBar = this.transform.GetChild(1).GetChild(0).GetChild(0);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //move towards target on x, y plane
-        /*
-        Vector3 movement = (aimTarget.transform.position - transform.position);
-        movement = new Vector3(movement.x, 0.0f, movement.z);
-        movement.Normalize();
-        */
-        Vector3 movement = new Vector3(0, 0, 1);
-        //GetComponent<Rigidbody>().AddForce(movement * speed);
-        directionOfTarget = (aimTarget.transform.position - this.transform.position).normalized;
-        Vector3 up = new Vector3(0, 1, 0);
-
-        //Normalize Rotate
-        //GetComponent<Rigidbody>().AddRelativeTorque(-this.transform.rotation.x, -this.transform.rotation.y, -this.transform.rotation.z);
-        //GetComponent<Rigidbody>().AddRelativeTorque(- this.transform.rotation.eulerAngles.normalized);
-        //GetComponent<Rigidbody>().AddRelativeTorque(directionOfTarget - new Vector3(this.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z));
-        GetComponent<Rigidbody>().AddRelativeTorque(Quaternion.LookRotation(directionOfTarget, up).x - this.transform.rotation.x, Quaternion.LookRotation(directionOfTarget, up).y - this.transform.rotation.y, Quaternion.LookRotation(directionOfTarget, up).z - this.transform.rotation.z);
-        //GetComponent<Rigidbody>().AddForce(0.0f, speed * Mathf.Max(Mathf.Min(0.5f - this.transform.position.y, 10), -10), 0.0f);
-        GetComponent<Rigidbody>().AddForce(0.0f, speed * (0.5f - this.transform.position.y), 0.0f);
-        //GetComponent<Rigidbody>().AddForce()
-
-        if (readyToFire && (aimTarget.transform.position - (this.transform.position + fireFromAdjusted)).magnitude < (Mathf.Pow(fireSpeed, 2)/9.81f))
+        if (aimTarget == null)
         {
-            FireCannon(aimTarget.transform);
+            foreach (GameObject item in GameObject.FindGameObjectsWithTag("SoldierSpawner"))
+            {
+                if (item.GetComponent<SoldierSpawner>().Allegiance != allegiance)
+                {
+                    aimTarget = item;
+                    break;
+                }
+            }
+        }
+        targetRange = (aimTarget.transform.position - (this.transform.position + fireFromAdjusted)).magnitude;
+        directionOfTarget = (aimTarget.transform.position - this.transform.position).normalized;
+        turnQuat = Quaternion.LookRotation(directionOfTarget) * Quaternion.Inverse(this.transform.rotation);
+        GetComponent<Rigidbody>().AddTorque(turnQuat.x * turnQuat.w, turnQuat.y * turnQuat.w, turnQuat.z * turnQuat.w);
+        GetComponent<Rigidbody>().AddForce(0.0f, speed * (0.5f - this.transform.position.y), 0.0f);
+
+        if (targetRange < maxRange)
+        {
+            AIState = SoldierAI.State.Firing;
+        }
+        else
+        {
+            AIState = SoldierAI.State.Marching;
+        }
+
+        switch (AIState)
+        {
+            case SoldierAI.State.Marching:
+                Vector3 movement = (aimTarget.transform.position - transform.position);
+                movement = new Vector3(movement.x, 0.0f, movement.z);
+                movement.Normalize();
+                GetComponent<Rigidbody>().AddForce(movement * speed);
+                break;
+            case SoldierAI.State.Firing:
+                if (readyToFire)
+                {
+                    FireCannon(aimTarget.transform);
+                }
+                break;
+            case SoldierAI.State.Reloading:
+                break;
         }
     }
 
-    GameObject FireCannon(Transform targetTransform)
+    private GameObject FireCannon(Transform targetTransform)
     {
         //float gravity = 9.81f;
         fireFromAdjusted = AdjustVectorToSoldierRotation(fireFrom);
-        float range = (targetTransform.position - (this.transform.position + fireFromAdjusted)).magnitude;
         //float a = Mathf.Pow(fireSpeed, 4) - (Mathf.Pow(range, 2) * Mathf.Pow(9.81f, 2));
         //float b = (Mathf.Pow(fireSpeed, 2) - Mathf.Sqrt(Mathf.Pow(fireSpeed, 4) - (Mathf.Pow(range, 2) * Mathf.Pow(9.81f, 2)))) / 2;
-        //float xComp = Mathf.Sqrt((Mathf.Pow(fireSpeed, 2) + Mathf.Sqrt(Mathf.Pow(fireSpeed, 4) - (Mathf.Pow(range, 2) * Mathf.Pow(9.81f, 2))))/2);
-        float xComp = Mathf.Sqrt((Mathf.Pow(fireSpeed, 2) - Mathf.Sqrt(Mathf.Pow(fireSpeed, 4) - (Mathf.Pow(range, 2) * Mathf.Pow(9.81f, 2)))) / 2);
+        float xComp = Mathf.Sqrt((Mathf.Pow(fireSpeed, 2) + Mathf.Sqrt(Mathf.Pow(fireSpeed, 4) - (Mathf.Pow(targetRange, 2) * Mathf.Pow(9.81f, 2))))/2); //StraightShot
+        //float xComp = Mathf.Sqrt((Mathf.Pow(fireSpeed, 2) - Mathf.Sqrt(Mathf.Pow(fireSpeed, 4) - (Mathf.Pow(range, 2) * Mathf.Pow(9.81f, 2)))) / 2); //ArcShot
         float yComp = Mathf.Sqrt(Mathf.Pow(fireSpeed, 2) - Mathf.Pow(xComp, 2));
 
         readyToFire = false;
         //GameObject bullet = GameObject.Instantiate(Resources.Load<GameObject>("Bullets/Bullet"), this.transform.position + ((new Vector3((this.transform.rotation * fireFrom).x, 0, (this.transform.rotation * fireFrom).z)).normalized), this.transform.rotation);
         GameObject bullet = GameObject.Instantiate(Resources.Load<GameObject>("Bullets/Bullet"), this.transform.position + fireFromAdjusted, this.transform.rotation);
-        //bullet.GetComponent<Rigidbody>().AddForce(0, 300, 300);
-        //bullet.GetComponent<Rigidbody>().AddForce(0, yComp, xComp);
-        //bullet.GetComponent<Rigidbody>().velocity = new Vector3 (0, yComp, xComp);
         bullet.GetComponent<Rigidbody>().velocity = AdjustVectorToSoldierRotation(new Vector3(0, yComp, xComp));
         StartCoroutine(WaitToFire(3.0f));
         return bullet;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Soldier" && other.gameObject.GetComponent<Soldier>().allegiance != allegiance)
+        {
+            aimTarget = other.gameObject;
+        }
     }
 
     private Vector3 AdjustVectorToSoldierRotation(Vector3 inVector)
@@ -83,37 +121,19 @@ public class Soldier : MonoBehaviour {
         while (!readyToFire)
         {
             yield return new WaitForSeconds(waitTime);
-            //print("WaitAndPrint " + Time.time);
             readyToFire = true;
         }
     }
 
-    //function to find the closest pick up target
-    /*
-    GameObject GetClosestPickUp(List<GameObject> PickUps)
+    public void TakeDamage(int damage)
     {
-        GameObject bestTarget = HomeZone;
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
-        foreach (GameObject potentialTargetObj in PickUps)
+        Health = Health - damage;
+        Fill = ((float)Health / (float)MaxHealth);
+        HealthBar.fillAmount = Fill;
+        if (Health <= 0)
         {
-            if (!potentialTargetObj.gameObject.GetComponent<PickUp>().IsCollected())
-            {
-                GameObject potentialTarget = potentialTargetObj;
-                Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
-                //directionToTarget.Normalize();
-                float dSqrToTarget = directionToTarget.sqrMagnitude;
-                if (dSqrToTarget < closestDistanceSqr)
-                {
-                    closestDistanceSqr = dSqrToTarget;
-                    //bestTarget = potentialTarget;
-                    bestTarget = potentialTargetObj;
-                }
-            }
+            Destroy(this.gameObject);
         }
-        //bestTarget.Normalize();
-        return bestTarget;
     }
-    */
 
 }

@@ -10,6 +10,8 @@ TagManager:
   - CollectionZone
   - PickUpZone
   - Bullet
+  - SoldierSpawner
+  - Soldier
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Bullets
   - 
   - 
   - 
@@ -46,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bullets
+    uniqueID: 2534511529
     locked: 0

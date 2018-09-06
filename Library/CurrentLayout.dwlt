@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 471}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -107,10 +107,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 442}
+  m_MinSize: {x: 679, y: 421}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 606
+  controlID: 48
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,10 +131,10 @@ MonoBehaviour:
     y: 0
     width: 826
     height: 947
-  m_MinSize: {x: 202, y: 442}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 202, y: 421}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 607
+  controlID: 49
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,8 +153,8 @@ MonoBehaviour:
     y: 0
     width: 826
     height: 486
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 321}
   m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 465
+  controlID: 182
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 542
-    height: 442
+    height: 444
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
@@ -249,9 +249,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 442
+    y: 444
     width: 542
-    height: 505
+    height: 503
   m_MinSize: {x: 104, y: 121}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 19}
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 192}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 523
+  controlID: 86
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -302,8 +302,8 @@ MonoBehaviour:
     y: 0
     width: 552
     height: 554
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -327,8 +327,8 @@ MonoBehaviour:
     y: 554
     width: 552
     height: 393
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -439,14 +439,14 @@ MonoBehaviour:
     height: 465
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 554.5757487807426
+  lastFramingTime: 1394.3055134779383
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.022949, y: 9.912579, z: -31.483341}
+    m_Target: {x: 0.3691527, y: 3.587606, z: -30.877472}
     speed: 2
-    m_Value: {x: 13.022949, y: 9.912579, z: -31.483341}
+    m_Value: {x: 0.3691527, y: 3.587606, z: -30.877472}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -474,19 +474,19 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.28798062, y: 0.29337904, z: -0.09316926, w: -0.90681607}
+    m_Target: {x: 0.1518105, y: -0.0029663641, z: 0.0004553183, w: 0.98840535}
     speed: 2
-    m_Value: {x: -0.28798062, y: 0.29337904, z: -0.09316926, w: -0.90681607}
+    m_Value: {x: -0.1518105, y: 0.0029663644, z: -0.0004553183, w: -0.9884054}
   m_Size:
-    m_Target: 4.3988667
+    m_Target: 7.6940827
     speed: 2
-    m_Value: 4.3988667
+    m_Value: 7.6940827
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: 0.4007416, y: -0.16216567, z: 0.072301954, w: 0.89882195}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -515,13 +515,13 @@ MonoBehaviour:
     x: 828
     y: 92
     width: 538
-    height: 421
+    height: 423
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 343a0000
-    m_LastClickedID: 14900
-    m_ExpandedIDs: d68fffff08a7ffffb2a8ffffa4c5ffff3ac9ffffecd3ffffe0d5ffff66dafffffedeffffe6fbffff000000009610000044340000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 648ffeff8a8ffeff8e8ffeff1ec8feff18c9feff6a19ffff7619ffff9a19ffff1821fffffa22fffffa2affffcc6afffff66affff4681ffff6c81ffff7081ffffb0a1ffffd6a1ffffdaa1ffff66baffff8abaffffe2ceffffecceffff10cfffff5ee5ffff34e7ffffdefbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -539,7 +539,8 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
-  m_ExpandedScenes: []
+  m_ExpandedScenes:
+  - Roll-a-ball
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -565,9 +566,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 828
-    y: 534
+    y: 536
     width: 538
-    height: 484
+    height: 482
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -581,20 +582,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Completed-Game/Editor
+    - Assets/_Completed-Game/Resources/Soldiers
   m_ViewMode: 1
   m_StartGridSize: 40
   m_LastFolders:
-  - Assets/_Completed-Game/Editor
+  - Assets/_Completed-Game/Resources/Soldiers
   m_LastFoldersGridSize: 40
   m_LastProjectPath: C:\Users\Public\Documents\Unity Projects\TestGame\TestGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a0b0000
-    m_LastClickedID: 2826
-    m_ExpandedIDs: 00000000780a0000b20a0000a40b0000ea0c0000240d00004c0d0000700d0000440f00004c0f000000ca9a3b
+    m_SelectedIDs: 900b0000
+    m_LastClickedID: 2960
+    m_ExpandedIDs: 00000000800a0000be0a0000b40b0000fc0c0000360d00005e0d0000820d0000560f00005e0f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -622,7 +623,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000780a0000b20a0000a40b0000ea0c0000240d00004c0d0000700d0000440f00004c0f000000ca9a3b
+    m_ExpandedIDs: 00000000800a0000be0a0000b40b0000fc0c0000360d00005e0d0000820d0000560f00005e0f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -647,10 +648,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e6080000
-    m_LastClickedInstanceID: 2278
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 000000003e0b0000e275fdff1e0b0000
+    m_ExpandedInstanceIDs: 000000003e0b0000e275fdff1e0b000032320000220b00002c0b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,7 +667,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 3}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -698,9 +699,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 828
-    y: 534
+    y: 536
     width: 538
-    height: 484
+    height: 482
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &20
 MonoBehaviour:
@@ -890,7 +891,7 @@ MonoBehaviour:
       name: New Unity Project
       fullName: New Unity Project
       resultStatus: 1
-      duration: 0.1206611
+      duration: 0.124769
       messages: 
       output: 
       stacktrace: 
@@ -904,7 +905,7 @@ MonoBehaviour:
       name: Assembly-CSharp-Editor.dll
       fullName: C:/Users/Public/Documents/Unity Projects/TestGame/TestGame/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
       resultStatus: 1
-      duration: 0.1018956
+      duration: 0.1045951
       messages: 
       output: 
       stacktrace: 
@@ -918,7 +919,7 @@ MonoBehaviour:
       name: Unit_CollectionZoneFactory
       fullName: Unit_CollectionZoneFactory
       resultStatus: 1
-      duration: 0.0223392
+      duration: 0.023083
       messages: 
       output: 
       stacktrace: 
@@ -932,7 +933,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreated
       fullName: Unit_CollectionZoneFactory.PickUpZoneIsCreated
       resultStatus: 1
-      duration: 0.0088687
+      duration: 0.0091736
       messages: 
       output: 
       stacktrace: 
@@ -947,7 +948,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreatedInCorrectPlace
       fullName: Unit_CollectionZoneFactory.PickUpZoneIsCreatedInCorrectPlace
       resultStatus: 1
-      duration: 0.0019374
+      duration: 0.0019175
       messages: 
       output: 
       stacktrace: 
@@ -962,7 +963,7 @@ MonoBehaviour:
       name: Unit_PickUp
       fullName: Unit_PickUp
       resultStatus: 1
-      duration: 0.0126043
+      duration: 0.0118821
       messages: 
       output: 
       stacktrace: 
@@ -976,7 +977,7 @@ MonoBehaviour:
       name: PickUpIsCollectedCheck
       fullName: Unit_PickUp.PickUpIsCollectedCheck
       resultStatus: 1
-      duration: 0.0004856
+      duration: 0.0005463
       messages: 
       output: 
       stacktrace: 
@@ -991,7 +992,7 @@ MonoBehaviour:
       name: PickUpIsNotCollectedCheck
       fullName: Unit_PickUp.PickUpIsNotCollectedCheck
       resultStatus: 1
-      duration: 0.0002524
+      duration: 0.0002565
       messages: 
       output: 
       stacktrace: 
@@ -1006,7 +1007,7 @@ MonoBehaviour:
       name: PickUpIsPickedUp
       fullName: Unit_PickUp.PickUpIsPickedUp
       resultStatus: 1
-      duration: 0.0000943
+      duration: 0.0001241
       messages: 
       output: 
       stacktrace: 
@@ -1021,7 +1022,7 @@ MonoBehaviour:
       name: Unit_PickUpHandler
       fullName: Unit_PickUpHandler
       resultStatus: 1
-      duration: 0.0131165
+      duration: 0.0136298
       messages: 
       output: 
       stacktrace: 
@@ -1035,7 +1036,7 @@ MonoBehaviour:
       name: PickUpIsAddedToOpenList
       fullName: Unit_PickUpHandler.PickUpIsAddedToOpenList
       resultStatus: 1
-      duration: 0.0010743
+      duration: 0.0025077
       messages: 
       output: 
       stacktrace: 
@@ -1050,7 +1051,7 @@ MonoBehaviour:
       name: PickUpIsAddedToTargetedList
       fullName: Unit_PickUpHandler.PickUpIsAddedToTargetedList
       resultStatus: 1
-      duration: 0.0001285
+      duration: 0.0002992
       messages: 
       output: 
       stacktrace: 
@@ -1065,7 +1066,7 @@ MonoBehaviour:
       name: PickUpIsRemovedFromOpenList
       fullName: Unit_PickUpHandler.PickUpIsRemovedFromOpenList
       resultStatus: 1
-      duration: 0.0001203
+      duration: 0.0001191
       messages: 
       output: 
       stacktrace: 
@@ -1080,7 +1081,7 @@ MonoBehaviour:
       name: Unit_PickUpZoneFactory
       fullName: Unit_PickUpZoneFactory
       resultStatus: 1
-      duration: 0.0142767
+      duration: 0.0148066
       messages: 
       output: 
       stacktrace: 
@@ -1094,7 +1095,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreated
       fullName: Unit_PickUpZoneFactory.PickUpZoneIsCreated
       resultStatus: 1
-      duration: 0.000523
+      duration: 0.0008104
       messages: 
       output: 
       stacktrace: 
@@ -1109,7 +1110,7 @@ MonoBehaviour:
       name: PickUpZoneIsCreatedInCorrectPlace
       fullName: Unit_PickUpZoneFactory.PickUpZoneIsCreatedInCorrectPlace
       resultStatus: 1
-      duration: 0.0002685
+      duration: 0.0002772
       messages: 
       output: 
       stacktrace: 
@@ -1124,7 +1125,7 @@ MonoBehaviour:
       name: Unit_SpawnerCollision
       fullName: Unit_SpawnerCollision
       resultStatus: 1
-      duration: 0.018433
+      duration: 0.0209271
       messages: 
       output: 
       stacktrace: 
@@ -1138,7 +1139,7 @@ MonoBehaviour:
       name: WorkerCostsResources
       fullName: Unit_SpawnerCollision.WorkerCostsResources
       resultStatus: 1
-      duration: 0.0011482
+      duration: 0.002164
       messages: 
       output: 
       stacktrace: 
@@ -1153,7 +1154,7 @@ MonoBehaviour:
       name: WorkerIsSpawned
       fullName: Unit_SpawnerCollision.WorkerIsSpawned
       resultStatus: 1
-      duration: 0.000255
+      duration: 0.0002718
       messages: 
       output: 
       stacktrace: 
@@ -1168,7 +1169,7 @@ MonoBehaviour:
       name: WorkerIsSpawnedInCorrectPlace
       fullName: Unit_SpawnerCollision.WorkerIsSpawnedInCorrectPlace
       resultStatus: 1
-      duration: 0.0002844
+      duration: 0.0002862
       messages: 
       output: 
       stacktrace: 
@@ -1183,7 +1184,7 @@ MonoBehaviour:
       name: Unit_SpawnerFactory
       fullName: Unit_SpawnerFactory
       resultStatus: 1
-      duration: 0.0154121
+      duration: 0.0142768
       messages: 
       output: 
       stacktrace: 
@@ -1197,7 +1198,7 @@ MonoBehaviour:
       name: SpawnerIsCreated
       fullName: Unit_SpawnerFactory.SpawnerIsCreated
       resultStatus: 1
-      duration: 0.0003891
+      duration: 0.0007156
       messages: 
       output: 
       stacktrace: 
@@ -1212,7 +1213,7 @@ MonoBehaviour:
       name: SpawnerIsCreatedInCorrectPlace
       fullName: Unit_SpawnerFactory.SpawnerIsCreatedInCorrectPlace
       resultStatus: 1
-      duration: 0.0001901
+      duration: 0.0002113
       messages: 
       output: 
       stacktrace: 

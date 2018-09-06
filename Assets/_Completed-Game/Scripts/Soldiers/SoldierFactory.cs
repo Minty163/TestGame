@@ -9,10 +9,11 @@ public class SoldierFactory : MonoBehaviour {
     public static Material Team2Material { get; set; }
     public static Material DefaultMaterial { get; set; }
 
-    public static GameObject GiveMeSoldier(Vector3 targetPosition, Quaternion targetRotation, GameResources.Allegiance allegiance)
+    public static GameObject GiveMeSoldier(Vector3 targetPosition, Quaternion targetRotation, GameResources.Allegiance allegiance, GameObject target)
     {
         GameObject instance = Instantiate<GameObject>(SoldierTemplate, targetPosition, targetRotation);
         instance.GetComponent<Soldier>().allegiance = allegiance;
+        instance.GetComponent<Soldier>().aimTarget = target;
         switch (allegiance)
         {
             case GameResources.Allegiance.Team1:

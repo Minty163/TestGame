@@ -16,14 +16,15 @@ public class Worker : MonoBehaviour {
     // Use this for initialization
     void Start () {
         atCapacity = false;
-        aimTarget = HomeZone;
+        aimTarget = null;
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         if (!atCapacity)
         {
-            if (aimTarget.Equals(HomeZone))
+            //if (aimTarget.Equals(null))
+            if (aimTarget == null)
             {
                 //Debug.Log("CollectionZoneTarget");
                 //find direction to closest pick up
@@ -59,7 +60,7 @@ public class Worker : MonoBehaviour {
     //function to find the closest pick up target
     GameObject GetClosestPickUp (List<GameObject> PickUps)
     {
-        GameObject bestTarget = HomeZone;
+        GameObject bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
         foreach (GameObject potentialTargetObj in PickUps)
@@ -156,20 +157,4 @@ public class Worker : MonoBehaviour {
         allegiance = newAllegiance;
     }
 
-    /*
-    private bool IsIdealPickUp(Collider other)
-    {
-        return other.gameObject.CompareTag("Pick Up") && other.gameObject.Equals(aimTarget) && !atCapacity;
-    }
-
-    private bool IsOtherWorkersPickUp(Collider other)
-    {
-        return other.gameObject.CompareTag("Pick Up") && !other.gameObject.Equals(aimTarget) && !atCapacity;
-    }
-
-    private bool IsOtherPickUpTarget(Collider other)
-    {
-        return other.gameObject.CompareTag("Pick Up") && !other.gameObject.Equals(aimTarget) && !atCapacity;
-    }
-    */
 }

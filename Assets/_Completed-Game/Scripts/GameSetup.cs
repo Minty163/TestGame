@@ -74,7 +74,7 @@ public class GameSetup : MonoBehaviour {
         //Team2Spawner
         SpawnerFactory.GiveMeSpawner(new Vector3(-4, 0.5f, 27), Quaternion.identity, GameResources.Allegiance.Team2, team2CollectionZone, new Vector3(0, 0, -1));
         //Team2SoldierSpawner
-        SoldierSpawnerFactory.GiveMeSoldierSpawner(new Vector3(6, 0.5f, 27), Quaternion.identity, GameResources.Allegiance.Team2, new Vector3(0, 0, -1));
+        SoldierSpawnerFactory.GiveMeSoldierSpawner(new Vector3(6, 0.5f, 27), new Quaternion(0,1,0,0).normalized, GameResources.Allegiance.Team2, new Vector3(0, 0, 1));
     }
 	
 	// Update is called once per frame

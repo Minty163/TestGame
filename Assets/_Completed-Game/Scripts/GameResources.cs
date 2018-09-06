@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameResources : MonoBehaviour {
+public static class GameResources {
 
     public static Text countText;
     public static string Display;
@@ -12,6 +12,8 @@ public class GameResources : MonoBehaviour {
     public static Dictionary<Allegiance,int> resourceDictionary;
     public enum Allegiance { Team1, Team2 };
 
+    /*
+    //Needs to happen in GameSetup
     void Start () {
         resourceDictionary = new Dictionary<Allegiance, int>();
         resourceDictionary.Add(Allegiance.Team1, 0);
@@ -23,10 +25,7 @@ public class GameResources : MonoBehaviour {
         SetResourceText(Allegiance.Team1);
         SetResourceText(Allegiance.Team2);
     }
-
-    void Update () {
-		
-	}
+    */
 
     // Create a standalone function that can update the 'countText' UI and check if the required amount to win has been achieved
     public static void SetResourceText(Allegiance allegience)
