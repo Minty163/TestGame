@@ -9,25 +9,27 @@ public class Unit_PickUpHandler {
 
     private Vector3 targetPosition;
     private GameObject pickUp;
+    private GameObject worker;
 
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
         targetPosition = new Vector3(0, 10, 0);
         pickUp = GameObject.Instantiate(Resources.Load<GameObject>("PickUp"), targetPosition, Quaternion.identity);
+        worker = GameObject.Instantiate(Resources.Load<GameObject>("Worker"), targetPosition, Quaternion.identity);
     }
 
     [SetUp]
     public void SetUp()
     {
-        PickUpHandler.openPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
-        PickUpHandler.targetedPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
-        PickUpHandler.carriedPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
+        PickUpHandler.openPickUpDictionary = new Dictionary<GameResources.Allegiance, Dictionary<GameObject, GameObject>>();
+        //PickUpHandler.targetedPickUpDictionary = new Dictionary<GameResources.Allegiance, Dictionary<GameObject, GameObject>>();
+        PickUpHandler.carriedPickUpDictionary = new Dictionary<GameResources.Allegiance, Dictionary<GameObject, GameObject>>();
         foreach (GameResources.Allegiance item in Enum.GetValues(typeof(GameResources.Allegiance)))
         {
-            PickUpHandler.openPickUpDictionary.Add(item, new List<GameObject>());
-            PickUpHandler.targetedPickUpDictionary.Add(item, new List<GameObject>());
-            PickUpHandler.carriedPickUpDictionary.Add(item, new List<GameObject>());
+            PickUpHandler.openPickUpDictionary.Add(item, new Dictionary<GameObject, GameObject>());
+            //PickUpHandler.targetedPickUpDictionary.Add(item, new List<GameObject>());
+            PickUpHandler.carriedPickUpDictionary.Add(item, new Dictionary<GameObject, GameObject>());
         }
     }
 
@@ -38,7 +40,7 @@ public class Unit_PickUpHandler {
         //Act
         PickUpHandler.AddToOpenPickUp(pickUp);
         //Assert
-        Assert.Contains(pickUp, PickUpHandler.openPickUpDictionary[GameResources.Allegiance.Team1]);
+        Assert.True(PickUpHandler.openPickUpDictionary[GameResources.Allegiance.Team1].ContainsKey(pickUp));
     }
 
     [Test]
@@ -47,19 +49,9 @@ public class Unit_PickUpHandler {
         //Arrange
         PickUpHandler.AddToOpenPickUp(pickUp);
         //Act
-        PickUpHandler.TargetPickUp(pickUp, GameResources.Allegiance.Team1);
+        PickUpHandler.TargetPickUp(pickUp, worker, GameResources.Allegiance.Team1);
         //Assert
-        Assert.False(PickUpHandler.openPickUpDictionary[GameResources.Allegiance.Team1].Contains(pickUp));
+        Assert.False(PickUpHandler.openPickUpDictionary[GameResources.Allegiance.Team1][pickUp] == null);
     }
 
-    [Test]
-    public void PickUpIsAddedToTargetedList()
-    {
-        //Arrange
-        PickUpHandler.AddToOpenPickUp(pickUp);
-        //Act
-        PickUpHandler.TargetPickUp(pickUp, GameResources.Allegiance.Team1);
-        //Assert
-        Assert.True(PickUpHandler.targetedPickUpDictionary[GameResources.Allegiance.Team1].Contains(pickUp));
-    }
 }

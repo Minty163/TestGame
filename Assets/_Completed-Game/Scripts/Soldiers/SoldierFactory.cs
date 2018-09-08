@@ -11,7 +11,7 @@ public class SoldierFactory : MonoBehaviour {
 
     public static GameObject GiveMeSoldier(Vector3 targetPosition, Quaternion targetRotation, GameResources.Allegiance allegiance, GameObject target)
     {
-        GameObject instance = Instantiate<GameObject>(SoldierTemplate, targetPosition, targetRotation);
+        GameObject instance = Instantiate<GameObject>(SoldierTemplate, targetPosition + new Vector3 (Random.Range(-2f,2f),0,0), targetRotation);
         instance.GetComponent<Soldier>().allegiance = allegiance;
         instance.GetComponent<Soldier>().aimTarget = target;
         switch (allegiance)

@@ -75,7 +75,7 @@ public class Soldier : MonoBehaviour {
                 GetComponent<Rigidbody>().AddForce(movement * speed);
                 break;
             case SoldierAI.State.Firing:
-                if (readyToFire)
+                if (readyToFire && FacingAimDirection())
                 {
                     FireCannon(aimTarget.transform);
                 }
@@ -83,6 +83,14 @@ public class Soldier : MonoBehaviour {
             case SoldierAI.State.Reloading:
                 break;
         }
+    }
+
+    private bool FacingAimDirection()
+    {
+        //Vector3 FacingDirection = (this.transform.rotation * new Vector3(0, 0, 1)).normalized;
+        //Vector3 AimDirection = (this.transform.rotation * new Vector3(0, 0, 1)).normalized;
+        Debug.Log((directionOfTarget - (this.transform.rotation * new Vector3(0, 0, 1)).normalized).magnitude);
+        return (directionOfTarget - (this.transform.rotation * new Vector3(0, 0, 1)).normalized).magnitude < 0.01f;
     }
 
     private GameObject FireCannon(Transform targetTransform)

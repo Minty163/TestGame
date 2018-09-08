@@ -28,26 +28,14 @@ public class Worker : MonoBehaviour {
             {
                 //Debug.Log("CollectionZoneTarget");
                 //find direction to closest pick up
-                List<GameObject> AllPickUps = PickUpHandler.openPickUpDictionary[allegiance];
-                GameObject Target = GetClosestPickUp(AllPickUps);
-                PickUpHandler.TargetPickUp(Target, allegiance);
+                //List<GameObject> AllPickUps = PickUpHandler.openPickUpDictionary[allegiance];
+                GameObject Target = TargetClosestPickUp();
+                //PickUpHandler.TargetPickUp(Target, this.gameObject, allegiance);
                 aimTarget = Target;
             }
-            //Debug.Log("Push Target");
-            //move towards target on x, y plane
-            Vector3 movement = (aimTarget.transform.position - transform.position);
-            movement = new Vector3(movement.x, 0.0f, movement.z);
-            movement.Normalize();
-            GetComponent<Rigidbody>().AddForce(movement * speed);
         }
-        else
-        {
-            GameObject Target = HomeZone;
-            Vector3 movement = (Target.transform.position - transform.position);
-            movement = new Vector3(movement.x, 0.0f, movement.z);
-            movement.Normalize();
-            GetComponent<Rigidbody>().AddForce(movement * speed);
-        }
+
+        MoveToTarget(aimTarget);
 
         //Normalize Rotate
         GetComponent<Rigidbody>().AddRelativeTorque(-1 * this.transform.rotation.x, -1 * this.transform.rotation.y, -1 * this.transform.rotation.z);
@@ -57,29 +45,50 @@ public class Worker : MonoBehaviour {
 
     }
 
+    public void ClearTarget()
+    {
+        aimTarget = null;
+    }
+
+    private void MoveToTarget(GameObject Target)
+    {
+        if(Target == null) { Target = HomeZone; }
+        Vector3 movement = (Target.transform.position - transform.position);
+        movement = new Vector3(movement.x, 0.0f, movement.z);
+        movement.Normalize();
+        GetComponent<Rigidbody>().AddForce(movement * speed);
+    }
+
     //function to find the closest pick up target
-    GameObject GetClosestPickUp (List<GameObject> PickUps)
+    //GameObject GetClosestPickUp (List<GameObject> PickUps)
+    GameObject TargetClosestPickUp()
     {
         GameObject bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
-        foreach (GameObject potentialTargetObj in PickUps)
+        //foreach (GameObject potentialTargetObj in PickUps)
+        foreach (KeyValuePair<GameObject,GameObject> potentialTargetObj in PickUpHandler.openPickUpDictionary[allegiance])
         {
-            if (!potentialTargetObj.gameObject.GetComponent<PickUp>().IsCollected())
+            if(potentialTargetObj.Value == null)
+            //if (!potentialTargetObj.gameObject.GetComponent<PickUp>().IsCollected())
             {
-                GameObject potentialTarget = potentialTargetObj;
-                Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+                //GameObject potentialTarget = potentialTargetObj.Key;
+                Vector3 directionToTarget = potentialTargetObj.Key.transform.position - currentPosition;
                 //directionToTarget.Normalize();
                 float dSqrToTarget = directionToTarget.sqrMagnitude;
                 if (dSqrToTarget < closestDistanceSqr)
                 {
                     closestDistanceSqr = dSqrToTarget;
                     //bestTarget = potentialTarget;
-                    bestTarget = potentialTargetObj;
+                    bestTarget = potentialTargetObj.Key;
                 }
             }
         }
-        //bestTarget.Normalize();
+        if(bestTarget != null)
+        {
+            PickUpHandler.TargetPickUp(bestTarget, this.gameObject, allegiance);
+        }
+        aimTarget = bestTarget;
         return bestTarget;
     }
 
@@ -140,8 +149,8 @@ public class Worker : MonoBehaviour {
 
     private void PickUpCargo(Collider other)
     {
-        PickUpHandler.CarryPickUp(other.gameObject, allegiance);
-        aimTarget = HomeZone;
+        PickUpHandler.CarryPickUp(other.gameObject, this.gameObject, allegiance);
+        aimTarget = null;
         other.gameObject.GetComponent<PickUp>().PickedUp(this.transform);
         cargo = other.gameObject;
         atCapacity = true;

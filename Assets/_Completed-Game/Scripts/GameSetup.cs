@@ -20,14 +20,14 @@ public class GameSetup : MonoBehaviour {
         GameResources.SetResourceText(GameResources.Allegiance.Team1);
         GameResources.SetResourceText(GameResources.Allegiance.Team2);
         //PickUps
-        PickUpHandler.openPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
-        PickUpHandler.targetedPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
-        PickUpHandler.carriedPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
+        PickUpHandler.openPickUpDictionary = new Dictionary<GameResources.Allegiance, Dictionary<GameObject, GameObject>>();
+        //PickUpHandler.targetedPickUpDictionary = new Dictionary<GameResources.Allegiance, List<GameObject>>();
+        PickUpHandler.carriedPickUpDictionary = new Dictionary<GameResources.Allegiance, Dictionary<GameObject, GameObject>>();
         foreach (GameResources.Allegiance item in Enum.GetValues(typeof(GameResources.Allegiance)))
         {
-            PickUpHandler.openPickUpDictionary.Add(item, new List<GameObject>());
-            PickUpHandler.targetedPickUpDictionary.Add(item, new List<GameObject>());
-            PickUpHandler.carriedPickUpDictionary.Add(item, new List<GameObject>());
+            PickUpHandler.openPickUpDictionary.Add(item, new Dictionary<GameObject, GameObject>());
+            //PickUpHandler.targetedPickUpDictionary.Add(item, new List<GameObject>());
+            PickUpHandler.carriedPickUpDictionary.Add(item, new Dictionary<GameObject, GameObject>());
         }
         PickUpZoneFactory.PickUpZone = Resources.Load<GameObject>("PickUpZone");
         PickUpZoneFactory.PickUp = Resources.Load<GameObject>("PickUp");

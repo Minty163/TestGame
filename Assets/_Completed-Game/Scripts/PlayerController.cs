@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Pick Up") && PickUpHandler.IsAvailablePickUp(other.gameObject, allegiance))
 		{
             GameResources.AddResource(1, allegiance);
-            PickUpHandler.CarryPickUp(other.gameObject, allegiance);
+            PickUpHandler.CarryPickUp(other.gameObject, this.gameObject, allegiance);
             PickUpHandler.DeliverPickUp(other.gameObject, allegiance);
             Destroy(other.gameObject);
 		}
